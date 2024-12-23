@@ -1,10 +1,16 @@
-/* General Styles */
-body {
-    font-family: 'Open Sans', sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
@@ -20,46 +26,138 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header Styles */
+/* Header Styling */
 header {
     display: flex;
-    justify-content: space-between; /* Space between logo and navigation */
+    justify-content: space-between;  /* Space between logo and navigation */
     align-items: center; /* Align items vertically */
     padding: 20px;
     background-color: #003366;
     color: white;
 }
 
+header .logo {
+    display: flex;
+    flex-direction: column; /* Stack "TrueNorth" and "Energy Partners" vertically */
+    text-align: left;
+}
+
 header .logo h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
+    display: flex;
+    align-items: baseline;
 }
 
 header .logo h1 .true {
-    color: #003366;  /* Dark Blue */
+    color: white;  /* White color for "True" */
 }
 
 header .logo h1 .north {
-    color: #00A9E0;  /* Light Blue */
+    color: #00A9E0;  /* Light Blue for "North" */
+    margin-left: 10px;
 }
 
-header h2 {
-    font-size: 1.5rem;
-    color: #5F6368; /* Dark Gray */
-    margin: 5px 0 0;
+header .energy-partners {
+    color: #f4f4f9; /* Light gray for "Energy Partners" */
+    font-size: 18px;
+    font-weight: 300;
 }
 
 header nav {
     display: flex;
-    justify-content: flex-end; /* Align navigation items to the right */
+    gap: 20px;
 }
 
 header nav a {
-    margin: 0 15px;
     font-size: 1rem;
     color: white;
+    transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    color: #f4f4f9;
+    color: #00A9E0;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #00A9E0;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #007bff;
+}
+
+/* Main Section */
+main {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.overview, .client-focus {
+    margin-bottom: 60px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.service {
+    background-color: #fff;
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+    font-size: 1rem;
+}
+
+footer a {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00A9E0;
 }
