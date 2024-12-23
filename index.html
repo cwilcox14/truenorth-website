@@ -6,6 +6,7 @@
     <title>TrueNorth Energy Partners</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,62 +14,50 @@
             box-sizing: border-box;
         }
         @keyframes scrollBackground {
-        0% { background-position: center top; }
-        100% { background-position: center bottom; }
-    }
-        @keyframes scrollBackground {
-            0% { background-position: center top; opacity: 1; }
-            90% { background-position: center bottom; opacity: 1; }
-            100% { background-position: center bottom; opacity: 0; }
+            0% { background-position: center top; }
+            100% { background-position: center bottom; }
         }
-
-        @keyframes fadeInNewImage {
-            0% { background: url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover; opacity: 0; }
-            100% { background: url('/images/second-image.jpg') no-repeat center center/cover; opacity: 1; }
-        }
-
-        .hero.fade-in {
-            animation: fadeInNewImage 5s ease-in-out forwards;
-        }
-</style>
+    </style>
 </head>
 <body style="font-family: 'Open Sans', sans-serif; background-color: #f4f4f9; color: #333; line-height: 1.6;">
 
     <header class="p-3" style="background-color: #003366; color: white;">
-        <div class="row align-items-center">
-            <div class="col text-start">
-                <h1 class="d-flex align-items-baseline m-0">
-                    <span style="color: white;">True</span>
-                    <span style="color: #00A9E0; margin-left: 0px;">North</span>
-                </h1>
-                <span style="color: #f4f4f9; font-size: 24px; font-weight: 300;">Energy Partners</span>
-                <div class="mt-2">
-                    <a href="tel:2074001631" class="text-white text-decoration-none me-3">
-                        <i class="bi bi-telephone-fill"></i> (207) 400-1631
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank" class="text-white text-decoration-none me-3">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" class="text-white text-decoration-none me-3">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="https://www.youtube.com" target="_blank" class="text-white text-decoration-none">
-                        <i class="bi bi-youtube"></i>
-                    </a>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col text-start">
+                    <h1 class="d-flex align-items-baseline m-0">
+                        <span style="color: white;">True</span>
+                        <span style="color: #00A9E0; margin-left: 0px;">North</span>
+                    </h1>
+                    <span style="color: #f4f4f9; font-size: 24px; font-weight: 300;">Energy Partners</span>
+                    <div class="mt-2">
+                        <a href="tel:2074001631" class="text-white text-decoration-none me-3">
+                            <i class="bi bi-telephone-fill"></i> (207) 400-1631
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="text-white text-decoration-none me-3">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="text-white text-decoration-none me-3">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" class="text-white text-decoration-none">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col text-end">
-                <nav class="d-flex gap-3 justify-content-end">
-                    <a href="practices.html" class="text-white text-decoration-none">Practices</a>
-                    <a href="experts.html" class="text-white text-decoration-none">Experts</a>
-                    <a href="blog.html" class="text-white text-decoration-none">Blog</a>
-                    <a href="contact.html" class="text-white text-decoration-none">Contact</a>
-                </nav>
+                <div class="col text-end">
+                    <nav class="d-flex gap-3 justify-content-end">
+                        <a href="practices.html" class="text-white text-decoration-none">Practices</a>
+                        <a href="experts.html" class="text-white text-decoration-none">Experts</a>
+                        <a href="blog.html" class="text-white text-decoration-none">Blog</a>
+                        <a href="contact.html" class="text-white text-decoration-none">Contact</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="hero text-center text-white py-5" style="position: relative; background: url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover; animation: scrollBackground 45s linear infinite, fadeInNewImage 45s ease-in-out forwards;">
+    <section class="hero text-center text-white py-5" style="position: relative; background: url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover; animation: scrollBackground 30s linear infinite;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); pointer-events: none; z-index: 1;"></div>
         <div class="container" style="position: relative; z-index: 2;">
             <h2 class="display-3">Empowering Energy Solutions for the Future</h2>
