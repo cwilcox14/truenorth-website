@@ -4,60 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrueNorth Energy Partners</title>
-    <link rel="stylesheet" href="css/TrueNorthStyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <h1><span class="">True</span><span class="north">North</span></h1>
-            <span class="energy-partners">Energy Partners</span>
+<body style="font-family: 'Open Sans', sans-serif; background-color: #f4f4f9; color: #333; line-height: 1.6;">
+
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #003366; color: white;">
+        <div style="display: flex; flex-direction: column; text-align: left;">
+            <h1 style="font-size: 3rem; margin: 0; display: flex; align-items: baseline;">
+                <span style="color: white;">True</span>
+                <span style="color: #00A9E0; margin-left: 10px;">North</span>
+            </h1>
+            <span style="color: #f4f4f9; font-size: 18px; font-weight: 300;">Energy Partners</span>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
+        <nav style="display: flex; gap: 20px;">
+            <a href="index.html" style="font-size: 1rem; color: white; text-decoration: none; transition: color 0.3s ease;">Home</a>
+            <a href="about.html" style="font-size: 1rem; color: white; text-decoration: none; transition: color 0.3s ease;">About Us</a>
+            <a href="services.html" style="font-size: 1rem; color: white; text-decoration: none; transition: color 0.3s ease;">Services</a>
+            <a href="contact.html" style="font-size: 1rem; color: white; text-decoration: none; transition: color 0.3s ease;">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Empowering Energy Solutions for the Future</h2>
-            <p>At TrueNorth Energy Partners, we provide expert consulting services that drive growth and sustainability in the energy sector.</p>
-            <a href="services.html" class="cta-button">Discover Our Services</a>
-        </div>
-    </section>
+   <section class="hero" style="background: url('images/futuristic-utility.jpg') no-repeat center center/cover; color: white; padding: 100px 20px; text-align: center;">
+    <div>
+        <h2 class="display-3">Empowering Energy Solutions for the Future</h2>
+        <p class="lead">At TrueNorth Energy Partners, we provide expert consulting services that drive growth and sustainability in the energy sector.</p>
+        <a href="services.html" class="cta-button">Discover Our Services</a>
+    </div>
+</section>
 
-    <main>
-        <section class="overview">
-            <h2>Who We Are</h2>
-            <p>TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
-            <a href="about.html" class="cta-button">Learn More About Us</a>
+    <main style="padding: 60px 20px; text-align: center;">
+        <section style="margin-bottom: 60px;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Who We Are</h2>
+            <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px;">TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
+            <a href="about.html" style="padding: 10px 20px; background-color: #00A9E0; color: white; font-size: 1rem; border-radius: 5px; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease;">Learn More About Us</a>
         </section>
 
-        <section class="client-focus">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service">
-                    <h3>Strategy & Advisory</h3>
-                    <p>We help energy companies navigate market changes with tailored strategic advice.</p>
+        <section style="margin-bottom: 60px;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Our Services</h2>
+            <div style="display: flex; justify-content: space-around; margin-top: 40px;">
+                <div style="background-color: #fff; padding: 30px; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    <h3 style="font-size: 1.5rem; color: #333; margin-bottom: 10px;">Strategy & Advisory</h3>
+                    <p style="color: #555;">We help energy companies navigate market changes with tailored strategic advice.</p>
                 </div>
-                <div class="service">
-                    <h3>Operational Excellence</h3>
-                    <p>Our operational expertise ensures that your business runs efficiently and effectively.</p>
+                <div style="background-color: #fff; padding: 30px; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    <h3 style="font-size: 1.5rem; color: #333; margin-bottom: 10px;">Operational Excellence</h3>
+                    <p style="color: #555;">Our operational expertise ensures that your business runs efficiently and effectively.</p>
                 </div>
-                <div class="service">
-                    <h3>Sustainability Solutions</h3>
-                    <p>We guide businesses toward sustainable energy practices and long-term environmental responsibility.</p>
+                <div style="background-color: #fff; padding: 30px; width: 30%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+                    <h3 style="font-size: 1.5rem; color: #333; margin-bottom: 10px;">Sustainability Solutions</h3>
+                    <p style="color: #555;">We guide businesses toward sustainable energy practices and long-term environmental responsibility.</p>
                 </div>
             </div>
-            <a href="services.html" class="cta-button">Explore All Services</a>
+            <a href="services.html" style="padding: 15px 30px; background-color: #00A9E0; color: white; font-size: 1.1rem; border-radius: 25px; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease;">Explore All Services</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
+    <footer style="text-align: center; padding: 20px; background-color: #003366; color: white; font-size: 1rem;">
+        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html" style="color: white; text-decoration: none;">Privacy Policy</a></p>
     </footer>
+
 </body>
 </html>
