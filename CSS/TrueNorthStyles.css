@@ -55,12 +55,12 @@ header .logo h1 .true {
 
 header .logo h1 .north {
     color: #00A9E0;  /* Light Blue for "North" */
-    margin-left: 10px;
+    ;
 }
 
 header .energy-partners {
-    color: #f4f4f9; /* Light gray for "Energy Partners" */
-    font-size: 18px;
+    color:#orange;
+    font-size: 20px;
     font-weight: 300;
 }
 
