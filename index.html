@@ -41,6 +41,17 @@
             color: orangered;
             text-decoration: underline;
         }
+		
+		.navbar-toggler {
+			border: none;
+			outline: none;
+		}
+
+		.navbar-toggler-icon {
+			background-color: orangered; /* Customize waffle icon color */
+			border-radius: 50%;
+			padding: 5px;
+		}
 
         h2 {
             font-size: 2.5rem;
@@ -133,16 +144,32 @@
 
             <!-- Navigation -->
             <div class="col text-end">
-                <nav class="d-flex justify-content-end">
-                    <a href="practices.html" class="text-decoration-none">Practices</a>
-                    <a href="experts.html" class="text-decoration-none">Experts</a>
-                    <a href="blog.html" class="text-decoration-none">Blog</a>
-                    <a href="contact.html" class="text-decoration-none">Contact</a>
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none" href="practices.html">Practices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none" href="experts.html">Experts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-decoration-none" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </div>
     </div>
 </header>
+
 
 
 <div>
