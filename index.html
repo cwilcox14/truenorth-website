@@ -231,24 +231,29 @@
 <script>
     let lastScrollY = window.scrollY;
     const header = document.getElementById('main-header');
-    let hasScrolled = false;
+    let initialLoad = true; // Flag to handle initial load
 
     window.addEventListener('scroll', () => {
-        // Only activate the disappearing header after the user has scrolled at least once
-        if (!hasScrolled && window.scrollY === 0) {
-            hasScrolled = true;
+        if (initialLoad) {
+            // Reset the scroll position and stop the disappearing behavior during initial load
+            lastScrollY = window.scrollY;
+            initialLoad = false;
             return;
         }
 
         if (window.scrollY > lastScrollY) {
-            // Scrolling down, hide header
+            // Scrolling down, hide the header
             header.style.transform = 'translateY(-100%)';
         } else {
-            // Scrolling up, show header
+            // Scrolling up, show the header
             header.style.transform = 'translateY(0)';
         }
         lastScrollY = window.scrollY;
-        hasScrolled = true;
+    });
+
+    // Ensure initial load flag is set after the page is fully loaded
+    window.addEventListener('load', () => {
+        initialLoad = false;
     });
 </script>
 
