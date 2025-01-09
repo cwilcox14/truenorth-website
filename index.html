@@ -33,15 +33,13 @@
         nav a {
             color: #003366;
             font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 10px;
         }
 
         nav a:hover {
             color: #00A9E0;
             text-decoration: underline;
-        }
-
-        .hero {
-           ;
         }
 
         h2 {
@@ -63,7 +61,7 @@
             transform: scale(1.05);
         }
 
-        .p-4.bg-white.shadow:hover {
+        .p-3.bg-white.shadow:hover {
             transform: translateY(-5px);
             transition: transform 0.3s ease;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -103,19 +101,18 @@
             opacity: 1;
             transform: translateY(0);
         }
-		nav a:hover {
-    text-decoration: underline;
-    color: #00A9E0; /* Optional: Change color on hover */
-}
 
-/* Pointer cursor for service buttons */
-.p-3.bg-white.shadow:hover, .btn-primary:hover {
-    cursor: pointer;
-}
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+        }
     </style>
 </head>
 <body>
-<header id="main-header" class="p-2" style="padding: 10px 0; background-color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out; z-index: 1000;">
+<header id="main-header" class="p-2" style="transition: transform 0.3s ease-in-out;">
     <div class="container">
         <div class="row align-items-center">
             <!-- Logo and Branding -->
@@ -132,7 +129,7 @@
 
             <!-- Navigation -->
             <div class="col text-end">
-                <nav class="d-flex gap-3 justify-content-end" style="font-size: 1.1rem;">
+                <nav class="d-flex justify-content-end">
                     <a href="practices.html" class="text-decoration-none">Practices</a>
                     <a href="experts.html" class="text-decoration-none">Experts</a>
                     <a href="blog.html" class="text-decoration-none">Blog</a>
@@ -143,22 +140,11 @@
     </div>
 </header>
 
-
-
 <div>
     <!-- Hero Section -->
-    <section class="hero text-white py-3 " 
-        style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover; 
-               animation: scrollBackground 40s linear infinite; 
-               display: flex; 
-               align-items: center; 
-               justify-content: center;">
-        <div class="" 
-			 style="width: 50%;
-					margin-top:80px;
-					margin-bottom:80px;
-					color: white; 
-					text-align: left;">
+    <section class="hero text-white py-3" 
+        style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover;">
+        <div style="width: 50%; color: white; text-align: left;">
             <h2 class="display-4">Empowering Energy Solutions for the Future</h2>
             <p class="lead">At TrueNorth Energy Partners, we provide expert consulting services that drive growth and sustainability in the energy sector.</p>
             <a href="services.html" class="btn btn-primary">Discover Our Services</a>
@@ -166,38 +152,34 @@
     </section>
 
     <!-- Featured Services Section -->
-<section class="hero py-3" 
-    style="min-height: 60vh; display: flex; 
-           align-items: center; 
-           justify-content: center;">
-    <div style="width: 50%; color: #003366; text-align: left;">
-        <h2 class="display-4" style="color: #003366;">Featured Services</h2>
-        <p class="lead" style="color: #0056b3;">
-			At TrueNorth Energy Partners, we provide a range of services designed to help your business thrive in the ever-evolving energy industry.
-		</p>
-        <div class="row justify-content-start mt-3" style="width: 100%;">
-            <div class="col-md-5 mb-3">
-                <div class="p-3 bg-white shadow rounded">
-                    <img src="images/LTSA.webp" alt="LTSA Negotiation" class="img-fluid rounded mb-2">
-                    <h3 class="h5 text-dark">LTSA Negotiation</h3>
-                    <p class="text-secondary">We help energy companies navigate market changes with tailored strategic advice.</p>
+    <section class="hero" 
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 50%; color: #003366; text-align: left;">
+            <h2 class="display-4">Featured Services</h2>
+            <p class="lead" style="color: #0056b3;">At TrueNorth Energy Partners, we provide a range of services designed to help your business thrive in the ever-evolving energy industry.</p>
+            <div class="row justify-content-start mt-3" style="width: 100%;">
+                <div class="col-md-5 mb-3">
+                    <div class="p-3 bg-white shadow rounded">
+                        <img src="images/LTSA.webp" alt="LTSA Negotiation" class="img-fluid rounded mb-2" loading="lazy">
+                        <h3 class="h5 text-dark">LTSA Negotiation</h3>
+                        <p class="text-secondary">We help energy companies navigate market changes with tailored strategic advice.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-3">
+                    <div class="p-3 bg-white shadow rounded">
+                        <img src="images/Rates and Regulatory.webp" alt="Rates and Regulatory" class="img-fluid rounded mb-2" loading="lazy">
+                        <h3 class="h5 text-dark">Rates and Regulatory</h3>
+                        <p class="text-secondary">We offer a full range of technical support and expert witness services for utility rate cases.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-5 mb-3">
-                <div class="p-3 bg-white shadow rounded">
-                    <img src="images/Rates and Regulatory.webp" alt="Rates and Regulatory" class="img-fluid rounded mb-2">
-                    <h3 class="h5 text-dark">Rates and Regulatory</h3>
-                    <p class="text-secondary">We offer a full range of technical support and expert witness services for utility rate cases.</p>
-                </div>
-            </div>
+            <a href="services.html" class="btn btn-primary mt-3">Explore All Services</a>
         </div>
-        <a href="services.html" class="btn btn-primary mt-3">Explore All Services</a>
-    </div>
-</section>
-
+    </section>
 
     <!-- Who We Are Section -->
-    <section class="hero text-white py-3" style="background: linear-gradient(to bottom, royalblue, rgba(0, 0, 0, 0.35)), url('/images/ScetionIIpc2.webp') no-repeat center center/cover; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+    <section class="hero text-white py-3" 
+        style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/ScetionIIpc2.webp') no-repeat center center/cover;">
         <div style="width: 50%; color: white; text-align: left;">
             <h2 class="display-4">Who We Are</h2>
             <p class="lead">TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
@@ -206,61 +188,46 @@
     </section>
 </div>
 
+<!-- Footer -->
+<footer class="text-center py-3">
+    <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
+    <div>
+        <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
+    </div>
+</footer>
 
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="text-center py-3">
-        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
-        <div>
-            <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="text-white mx-2"><i class="bi bi-linkedin"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-        sections.forEach(section => observer.observe(section));
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+    sections.forEach(section => observer.observe(section));
+
     let lastScrollY = window.scrollY;
     const header = document.getElementById('main-header');
-    const headerHeight = header.offsetHeight; // Get the height of the header
+    const headerHeight = header.offsetHeight;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY <= headerHeight) {
-            // Keep the header visible if the user hasn't scrolled past its height
             header.style.transform = 'translateY(0)';
             return;
         }
 
         if (window.scrollY > lastScrollY) {
-            // Scrolling down, hide the header
             header.style.transform = 'translateY(-100%)';
         } else {
-            // Scrolling up, show the header
             header.style.transform = 'translateY(0)';
         }
 
         lastScrollY = window.scrollY;
     });
 </script>
-
-
-	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
