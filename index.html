@@ -231,13 +231,12 @@
 <script>
     let lastScrollY = window.scrollY;
     const header = document.getElementById('main-header');
-    let initialLoad = true; // Flag to handle initial load
+    const headerHeight = header.offsetHeight; // Get the height of the header
 
     window.addEventListener('scroll', () => {
-        if (initialLoad) {
-            // Reset the scroll position and stop the disappearing behavior during initial load
-            lastScrollY = window.scrollY;
-            initialLoad = false;
+        if (window.scrollY <= headerHeight) {
+            // Keep the header visible if the user hasn't scrolled past its height
+            header.style.transform = 'translateY(0)';
             return;
         }
 
@@ -248,14 +247,11 @@
             // Scrolling up, show the header
             header.style.transform = 'translateY(0)';
         }
+
         lastScrollY = window.scrollY;
     });
-
-    // Ensure initial load flag is set after the page is fully loaded
-    window.addEventListener('load', () => {
-        initialLoad = false;
-    });
 </script>
+
 
 	
 </body>
