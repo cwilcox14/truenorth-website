@@ -7,7 +7,6 @@
     <link rel="icon" href="/images/Logo - CW try.jpg" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -25,98 +24,59 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 1000;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
         }
 
-        nav a {
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
             color: #003366;
             font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0 10px;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: orangered;
-            text-decoration: underline;
         }
-		
-		/* Hamburger Icon */
-.menu-icon {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    position: relative;
-    transition: all 0.3s ease;
-}
 
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    left: 0;
-    transition: all 0.3s ease;
-}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-.menu-icon::before {
-    top: -8px;
-}
+            .nav-links.show {
+                display: flex;
+            }
 
-.menu-icon::after {
-    bottom: -8px;
-}
-
-/* Rotate to "X" */
-.navbar-toggler[aria-expanded="true"] .menu-icon {
-    background-color: transparent;
-}
-
-.navbar-toggler[aria-expanded="true"] .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.navbar-toggler[aria-expanded="true"] .menu-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-}
-
-/* Dropdown Menu */
-.dropdown-menu-custom {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    padding: 1rem 0;
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.dropdown-menu-custom.show {
-    display: block;
-}
-
-.dropdown-menu-custom a {
-    color: #003366;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-menu-custom a:hover {
-    background-color: #f4f4f9;
-    color: orangered;
-}
-
+            .hamburger {
+                display: block;
+            }
+        }
 
         h2 {
             font-size: 2.5rem;
@@ -135,14 +95,8 @@
 
         .btn-primary:hover {
             transform: scale(1.05);
-			background-color:orangered;
-			border:none;
-        }
-
-        .p-3.bg-white.shadow:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background-color: orangered;
+            border: none;
         }
 
         footer {
@@ -151,145 +105,42 @@
             color: white;
         }
 
-        footer p {
-            margin-bottom: 10px;
-        }
-
         footer a {
             color: white;
-            font-size: 1.2rem;
+            text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
-
-        @keyframes scrollBackground {
-            0% { background-position: center top; }
-            100% { background-position: center bottom; }
-        }
-
-        section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 0;
-        }
-		
-		/* Default Styles */
-.hamburger-menu {
-    font-size: 2rem;
-    color: #003366;
-    cursor: pointer;
-}
-
-/* Navigation Hidden on Small Screens */
-@media (max-width: 768px) {
-    #nav-links {
-        display: none; /* Hide the nav links */
-        position: absolute;
-        top: 70px; /* Below the header */
-        right: 0;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-        border-radius: 0 0 10px 10px;
-        z-index: 1000;
-    }
-
-    #hamburger {
-        display: block; /* Show hamburger on small screens */
-    }
-}
-
     </style>
 </head>
 <body>
-<header id="main-header" class="p-2" style="transition: transform 0.3s ease-in-out; position: sticky; top: 0; z-index: 1000; background-color: white;">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Logo and Branding -->
-            <div class="col">
-                <a href="/" id="logo" class="d-flex align-items-center" style="text-decoration: none; cursor: pointer;">
-                    <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px; height: auto; margin-right: 10px;">
-                    <div class="text-start">
-                        <h1 class="d-flex align-items-baseline m-0" style="font-size: 1.8rem; font-weight: 700;">
-                            <span style="background: linear-gradient(45deg, #002B5C, #004B8D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);">True</span>
-                            <span style="color: #008BCE; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); font-weight: 700;">North</span>
-                        </h1>
-                        <span style="color: #FF6600; font-size: 18px; font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Energy Partners</span>
-                    </div>
-                </a>
+<header>
+    <div class="container d-flex justify-content-between align-items-center py-2">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center">
+            <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px; height: auto; margin-right: 10px;">
+            <div>
+                <h1 style="font-size: 1.8rem; font-weight: 700; margin: 0;">
+                    <span style="color: #002B5C;">True</span><span style="color: #008BCE;">North</span>
+                </h1>
+                <span style="color: #FF6600; font-size: 1rem;">Energy Partners</span>
             </div>
+        </a>
 
-            <!-- Hamburger Menu -->
-            <div class="col text-end">
-                <button id="menu-toggle" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" style="border: none; background: none;">
-                    <div class="menu-icon"></div>
-                </button>
-            </div>
-        </div>
-    </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">☰</div>
 
-    <!-- Dropdown Navigation -->
-    <div id="dropdown-menu" class="dropdown-menu-custom collapse">
-        <nav class="nav flex-column text-center">
-            <a href="practices.html" class="nav-link">Practices</a>
-            <a href="experts.html" class="nav-link">Experts</a>
-            <a href="blog.html" class="nav-link">Blog</a>
-            <a href="contact.html" class="nav-link">Contact</a>
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="nav-links">
+            <a href="practices.html">Practices</a>
+            <a href="experts.html">Experts</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </div>
-</header><header id="main-header" class="p-2" style="transition: transform 0.3s ease-in-out;">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Logo and Branding -->
-            <div class="col">
-                <a href="/" id="logo" class="d-flex align-items-center" style="text-decoration: none; cursor: pointer;">
-                    <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px; height: auto; margin-right: 10px;">
-                    <div class="text-start">
-                        <h1 class="d-flex align-items-baseline m-0" style="font-size: 1.8rem; font-weight: 700;">
-                            <span style="background: linear-gradient(45deg, #002B5C, #004B8D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);">True</span>
-                            <span style="color: #008BCE; text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3); font-weight: 700;">North</span>
-                        </h1>
-                        <span style="color: #FF6600; font-size: 18px; font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Energy Partners</span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Hamburger and Navigation -->
-            <div class="col text-end">
-                <div class="hamburger-menu" id="hamburger" style="cursor: pointer; display: none; font-size: 1.5rem;">
-                    ☰
-                </div>
-                <nav class="d-flex justify-content-end nav-links" id="nav-links" style="display: flex; gap: 10px;">
-                    <a href="practices.html" class="text-decoration-none">Practices</a>
-                    <a href="experts.html" class="text-decoration-none">Experts</a>
-                    <a href="blog.html" class="text-decoration-none">Blog</a>
-                    <a href="contact.html" class="text-decoration-none">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </div>
 </header>
-
-
-
-
 
 <div>
     <!-- Hero Section -->
@@ -305,59 +156,41 @@
     </section>
 
     <!-- Featured Services Section -->
-   <section class="hero" 
-    style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
-    <div style="width: 50%; color: #003366; text-align: left;">
-        <div class="">    
+    <section class="hero" 
+        style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div style="width: 50%; color: #003366; text-align: left;">
             <h2 class="display-4">Featured Practices</h2>
             <p class="lead" style="color: #0056b3;">At TrueNorth, we provide a range of services designed to help your business thrive in the ever-evolving energy industry.</p>
-        </div>
-        <div id="divFeaturedPractices" class="row justify-content-start mt-3" style="width: 100%;">
-            <!-- LTSA Negotiation Button -->
-            <div class="col-md-5 mb-3">
-                <a href="ltsa.html" style="text-decoration: none; cursor: pointer;">
-                    <div class="p-3 bg-white shadow rounded">
-                        <img src="images/LTSA.webp" alt="LTSA Negotiation" class="img-fluid rounded mb-2" loading="lazy">
-                        <h3 class="h5 text-dark">LTSA Negotiation</h3>
-                        <p class="text-secondary">We help energy companies navigate market changes with tailored strategic advice.</p>
-                    </div>
-                </a>
+            <div id="divFeaturedPractices" class="row justify-content-start mt-3" style="width: 100%;">
+                <!-- LTSA Negotiation Button -->
+                <div class="col-md-5 mb-3">
+                    <a href="ltsa.html" style="text-decoration: none; cursor: pointer;">
+                        <div class="p-3 bg-white shadow rounded">
+                            <img src="images/LTSA.webp" alt="LTSA Negotiation" class="img-fluid rounded mb-2" loading="lazy">
+                            <h3 class="h5 text-dark">LTSA Negotiation</h3>
+                            <p class="text-secondary">We help energy companies navigate market changes with tailored strategic advice.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Rates and Regulatory Button -->
+                <div class="col-md-5 mb-3">
+                    <a href="rates.html" style="text-decoration: none; cursor: pointer;">
+                        <div class="p-3 bg-white shadow rounded">
+                            <img src="images/Rates and Regulatory.webp" alt="Rates and Regulatory" class="img-fluid rounded mb-2" loading="lazy">
+                            <h3 class="h5 text-dark">Rates and Regulatory</h3>
+                            <p class="text-secondary">We offer a full range of technical support and expert witness services for utility rate cases.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <!-- Rates and Regulatory Button -->
-            <div class="col-md-5 mb-3">
-                <a href="rates.html" style="text-decoration: none; cursor: pointer;">
-                    <div class="p-3 bg-white shadow rounded">
-                        <img src="images/Rates and Regulatory.webp" alt="Rates and Regulatory" class="img-fluid rounded mb-2" loading="lazy">
-                        <h3 class="h5 text-dark">Rates and Regulatory</h3>
-                        <p class="text-secondary">We offer a full range of technical support and expert witness services for utility rate cases.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <a href="services.html" class="btn btn-primary mt-3">Explore Our Practices</a>
-    </div>
-</section>
-
-
-    <!-- Who We Are Section -->
-    <section class="hero text-white py-3" 
-        style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/ScetionIIpc2.webp') no-repeat center center/cover; 
-               min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 80px 0;">
-        <div style="width: 50%; color: white; text-align: left;">
-			<div class="col">
-			<h2 class="display-4">Who We Are</h2>
-            <p class="lead">TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
-            <a href="about.html" class="btn btn-primary">Our Team</a>
-			</div>
-            
+            <a href="services.html" class="btn btn-primary mt-3">Explore Our Practices</a>
         </div>
     </section>
 </div>
 
-
 <!-- Footer -->
 <footer class="text-center py-3">
-    <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html" class="text-white text-decoration-none">Privacy Policy</a></p>
+    <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
     <div>
         <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
         <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
@@ -366,57 +199,14 @@
 </footer>
 
 <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    });
-    sections.forEach(section => observer.observe(section));
-
-    let lastScrollY = window.scrollY;
-    const header = document.getElementById('main-header');
-    const headerHeight = header.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY <= headerHeight) {
-            header.style.transform = 'translateY(0)';
-            return;
-        }
-
-        if (window.scrollY > lastScrollY) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-
-        lastScrollY = window.scrollY;
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	
-<script>
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
 
-    let menuOpen = false;
-
     hamburger.addEventListener("click", () => {
-        if (!menuOpen) {
-            // Show the nav menu
-            navLinks.style.display = "flex";
-            hamburger.textContent = "✖"; // Change hamburger to "X"
-            menuOpen = true;
-        } else {
-            // Hide the nav menu
-            navLinks.style.display = "none";
-            hamburger.textContent = "☰"; // Change "X" back to hamburger
-            menuOpen = false;
-        }
+        navLinks.classList.toggle("show");
+        hamburger.textContent = hamburger.textContent === "☰" ? "✖" : "☰";
     });
 </script>
-	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
