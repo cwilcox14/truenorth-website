@@ -187,6 +187,35 @@
             justify-content: center;
             padding: 80px 0;
         }
+		
+		/* Default Styles */
+.hamburger-menu {
+    font-size: 2rem;
+    color: #003366;
+    cursor: pointer;
+}
+
+/* Navigation Hidden on Small Screens */
+@media (max-width: 768px) {
+    #nav-links {
+        display: none; /* Hide the nav links */
+        position: absolute;
+        top: 70px; /* Below the header */
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+    }
+
+    #hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+}
+
     </style>
 </head>
 <body>
