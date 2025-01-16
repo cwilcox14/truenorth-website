@@ -1,258 +1,253 @@
 /* General Reset */
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 80px; /* Adjusted for the fixed header */
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #003366;
-            font-weight: 600;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: #003366; /* Blue color for default state */
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
 
-        .nav-links a:hover {
-            color: orangered;
-        }
+.nav-links a:hover {
+    color: orangered; /* Change link color on hover */
+}
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 2rem;
-        }
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: white;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 100%;
-                padding: 20px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-            .nav-links.show {
-                display: flex;
-            }
+    .nav-links.show {
+        display: flex;
+    }
 
-            .hamburger {
-                display: block;
-            }
-        }
+    .hamburger {
+        display: block;
+    }
+}
 
-        .menu-icon {
-            width: 30px;
-            height: 3px;
-            background-color: #003366;
-            position: relative;
-            transition: all 0.3s ease;
-        }
+.menu-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #003366;
+    position: relative;
+    transition: all 0.3s ease;
+}
 
-        .menu-icon::before,
-        .menu-icon::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background-color: #003366;
-            transition: all 0.3s ease;
-        }
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #003366;
+    transition: all 0.3s ease;
+}
 
-        .menu-icon::before {
-            top: -8px;
-        }
+.menu-icon::before {
+    top: -8px;
+}
 
-        .menu-icon::after {
-            bottom: -8px;
-        }
+.menu-icon::after {
+    bottom: -8px;
+}
 
-        .menu-icon.open {
-            background-color: transparent;
-        }
+.menu-icon.open {
+    background-color: transparent;
+}
 
-        .menu-icon.open::before {
-            transform: rotate(45deg);
-            top: 0;
-        }
+.menu-icon.open::before {
+    transform: rotate(45deg);
+    top: 0;
+}
 
-        .menu-icon.open::after {
-            transform: rotate(-45deg);
-            bottom: 0;
-        }
+.menu-icon.open::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
 
-        h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
 
-        .btn-primary {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
+.btn-primary {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background-color: orangered;
-            border: none;
-        }
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: orangered;
+    border: none;
+}
 
-        .hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 0;
-        }
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
 
-        .hero-animated {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover;
-            animation: scrollBackground 40s linear infinite;
-        }
+.hero-animated {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover;
+    animation: scrollBackground 40s linear infinite;
+}
 
-        @keyframes scrollBackground {
-            0% {
-                background-position: center top;
-            }
-            100% {
-                background-position: center bottom;
-            }
-        }
+@keyframes scrollBackground {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
 
-        footer {
-            background-color: #003366;
-            padding: 20px 0;
-            color: white;
-        }
+footer {
+    background-color: #003366;
+    padding: 20px 0;
+    color: white;
+}
 
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
+footer a {
+    color: white;
+    text-decoration: none;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer a:hover {
+    text-decoration: underline;
+}
 
-		/* Styles for the main header */
-		#main-header {
-			position: fixed; /* Ensures the header stays at the top of the viewport */
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 1000; /* Places the header above other elements */
-			background-color: white; /* Background color for visibility */
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a professional look */
-			transition: transform 0.3s ease; /* Smooth transition for show/hide on scroll */
-		}
-
-		/* Optional padding for the body to avoid content being hidden under the header */
-		body {
-			padding-top: 80px; /* Adjust based on the height of your header */
-		}
-
-		/* Styling for navigation links inside the header */
-		#main-header .nav-links a {
-			text-decoration: none;
-			color: #003366; /* Blue color for default state */
-			font-weight: 600; /* Keep the bold look */
-			padding: 10px 15px; /* Add padding for better clickability */
-			display: inline-block;
-			transition: color 0.3s ease; /* Smooth color transition */
-		}
-		#main-header .nav-links a:hover {
-			color: orangered; /* Change link color on hover */
-			text-decoration: none; /* Optional: underline for hover effect */
-		}
-
-		/* Mobile responsiveness for the header */
-		@media (max-width: 768px) {
-			#main-header {
-				padding: 10px 15px; /* Adjust padding for smaller screens */
-			}
-
-			#main-header .nav-links {
-				display: none; /* Hide nav links by default on smaller screens */
-			}
-
-			#main-header .nav-links.show {
-				display: block; /* Show nav links when the menu toggle is activated */
-			}
-		}
+/* Styles for the main header */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
 /* Featured Practice Section */
 #featured-practice {
-    background-color: #003366; /* Matches site theme */
-    color: white;
     position: relative;
-    overflow: hidden;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #featured-practice h2 {
-    color: #FF6600; /* Highlight color for the header */
+    font-size: 1.5rem; /* Smaller font for "Featured Practice Area" */
+    text-transform: lowercase;
+    font-weight: 300;
+    margin-bottom: 20px;
+    z-index: 1;
 }
 
 #practice-container {
     background-size: cover;
     background-position: center;
-    animation: fadeIn 2s ease; /* Smooth fade-in effect */
     padding: 40px 20px;
-    border: 2px solid #FF6600; /* Border that matches site theme */
-    position: relative;
+    border-radius: 10px;
     z-index: 1;
-}
-
-#practice-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1); /* Subtle horizontal gradient */
-    z-index: 0;
-    animation: slideIn 2s ease forwards;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Ensures text readability */
 }
 
 #practice-container h3 {
-    color: #FF6600;
-    font-size: 2rem;
-    z-index: 1;
-    position: relative;
+    font-size: 3rem; /* Larger font for the practice name */
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 #practice-container p {
-    z-index: 1;
-    position: relative;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+#practice-container a {
+    text-decoration: none;
+    color: white;
+    background-color: #FF6600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#practice-container a:hover {
+    background-color: orangered;
+}
+
+/* Full background coverage for the section */
+#featured-practice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    filter: brightness(0.6); /* Dark overlay */
 }
 
 @keyframes fadeIn {
@@ -261,11 +256,5 @@
     }
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    to {
-        left: 100%;
     }
 }
