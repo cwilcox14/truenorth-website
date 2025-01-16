@@ -162,3 +162,48 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+		/* Styles for the main header */
+		#main-header {
+			position: fixed; /* Ensures the header stays at the top of the viewport */
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1000; /* Places the header above other elements */
+			background-color: white; /* Background color for visibility */
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a professional look */
+			transition: transform 0.3s ease; /* Smooth transition for show/hide on scroll */
+		}
+
+		/* Optional padding for the body to avoid content being hidden under the header */
+		body {
+			padding-top: 80px; /* Adjust based on the height of your header */
+		}
+
+		/* Styling for navigation links inside the header */
+		#main-header .nav-links a {
+			text-decoration: none;
+			color: #333; /* Default link color */
+			padding: 10px 15px; /* Add padding for better clickability */
+			display: inline-block;
+		}
+
+		#main-header .nav-links a:hover {
+			color: #0056b3; /* Change link color on hover */
+			text-decoration: underline; /* Optional: underline for hover effect */
+		}
+
+		/* Mobile responsiveness for the header */
+		@media (max-width: 768px) {
+			#main-header {
+				padding: 10px 15px; /* Adjust padding for smaller screens */
+			}
+
+			#main-header .nav-links {
+				display: none; /* Hide nav links by default on smaller screens */
+			}
+
+			#main-header .nav-links.show {
+				display: block; /* Show nav links when the menu toggle is activated */
+			}
+		}
