@@ -1,0 +1,31 @@
+<!-- experts.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experts | TrueNorth Energy Partners</title>
+    <link rel="stylesheet" href="css/TrueNorthStyles.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <section class="hero text-white py-3" style="background-color: #0056b3;">
+        <div class="container">
+            <h1>Meet Our Experts</h1>
+            <p>Learn about the individuals driving innovation and results at TrueNorth.</p>
+        </div>
+    </section>
+
+    <!-- Add content for experts here -->
+
+    <footer class="text-center py-3">
+        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | TrueNorth Energy Partners</title>
+    <link rel="stylesheet" href="css/TrueNorthStyles.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+
+    <section class="hero text-white py-3" style="background-color: #002B5C;">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Get in touch with our team today.</p>
+        </div>
+    </section>
+
+    <!-- Add contact form or details here -->
+
+    <footer class="text-center py-3">
+        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
