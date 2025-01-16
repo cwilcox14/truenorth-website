@@ -1,163 +1,164 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Body Styling */
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-}
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
-h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
 
-a {
-    color: #00A9E0;
-    text-decoration: none;
-}
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-a:hover {
-    text-decoration: underline;
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-/* Header Styling */
-header {
-    display: flex;
-    justify-content: space-between;  /* Space between logo and navigation */
-    align-items: center; /* Align items vertically */
-    padding: 20px;
-    background-color: #003366;
-    color: white;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: 600;
+        }
 
-header .logo {
-    display: flex;
-    flex-direction: column; /* Stack "TrueNorth" and "Energy Partners" vertically */
-    text-align: left;
-}
+        .nav-links a:hover {
+            color: orangered;
+        }
 
-header .logo h1 {
-    font-size: 3rem;
-    margin: 0;
-    display: flex;
-    align-items: baseline;
-}
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+        }
 
-header .logo h1 .true {
-    color: white;  /* White color for "True" */
-}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-header .logo h1 .north {
-    color: #00A9E0;  /* Light Blue for "North" */
-    ;
-}
+            .nav-links.show {
+                display: flex;
+            }
 
-header .energy-partners {
-    color:#orange;
-    font-size: 20px;
-    font-weight: 300;
-}
+            .hamburger {
+                display: block;
+            }
+        }
 
-header nav {
-    display: flex;
-    gap: 20px;
-}
+        .menu-icon {
+            width: 30px;
+            height: 3px;
+            background-color: #003366;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
-header nav a {
-    font-size: 1rem;
-    color: white;
-    transition: color 0.3s ease;
-}
+        .menu-icon::before,
+        .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #003366;
+            transition: all 0.3s ease;
+        }
 
-header nav a:hover {
-    color: #00A9E0;
-}
+        .menu-icon::before {
+            top: -8px;
+        }
 
-/* Hero Section */
-.hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
+        .menu-icon::after {
+            bottom: -8px;
+        }
 
-.hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
+        .menu-icon.open {
+            background-color: transparent;
+        }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
+        .menu-icon.open::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
 
-.cta-button {
-    padding: 15px 30px;
-    background-color: #00A9E0;
-    color: white;
-    font-size: 1.1rem;
-    border-radius: 25px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
+        .menu-icon.open::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
 
-.cta-button:hover {
-    background-color: #007bff;
-}
+        h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
 
-/* Main Section */
-main {
-    padding: 60px 20px;
-    text-align: center;
-}
+        .btn-primary {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
 
-.overview, .client-focus {
-    margin-bottom: 60px;
-}
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background-color: orangered;
+            border: none;
+        }
 
-.services {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-}
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+        }
 
-.service {
-    background-color: #fff;
-    padding: 30px;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+        .hero-animated {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/futuristic-utility.jpg.webp') no-repeat center center/cover;
+            animation: scrollBackground 40s linear infinite;
+        }
 
-.service h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
+        @keyframes scrollBackground {
+            0% {
+                background-position: center top;
+            }
+            100% {
+                background-position: center bottom;
+            }
+        }
 
-.service p {
-    color: #555;
-}
+        footer {
+            background-color: #003366;
+            padding: 20px 0;
+            color: white;
+        }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #003366;
-    color: white;
-    font-size: 1rem;
-}
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
 
-footer a {
-    color: white;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #00A9E0;
-}
+        footer a:hover {
+            text-decoration: underline;
+        }
