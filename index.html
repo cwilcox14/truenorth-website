@@ -24,8 +24,8 @@
     <!-- Featured Services Section -->
 <section id="featured-practice" class="hero text-white py-5">
     <div class="container text-center">
-        <h2 class="display-4 mb-4">Featured Practice Area</h2>
-        <div id="practice-container" class="p-5 rounded position-relative">
+        <h2 class="lead mb-4" style="font-size: 1.5rem;">Featured Practice Area</h2>
+        <div id="practice-container" class="rounded position-relative text-center py-5">
             <!-- Content dynamically populated by JavaScript -->
         </div>
     </div>
@@ -116,16 +116,21 @@
         // Select a random practice
         const randomPractice = practices[Math.floor(Math.random() * practices.length)];
 
-        // Populate the practice container
-        const practiceContainer = document.getElementById("practice-container");
-        practiceContainer.style.backgroundImage = `url(${randomPractice.image})`;
+        // Populate the section and container
+        const featuredPracticeSection = document.getElementById('featured-practice');
+        const practiceContainer = document.getElementById('practice-container');
+
+        // Set the full background image
+        featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
+
+        // Populate practice details
         practiceContainer.innerHTML = `
             <h3>${randomPractice.title}</h3>
             <p>${randomPractice.description}</p>
-            <a href="${randomPractice.link}" class="btn btn-primary mt-3">Learn More</a>
+            <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
         `;
     });
-</script>	
+</script>
 	
 
 
