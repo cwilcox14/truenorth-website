@@ -208,3 +208,64 @@
 				display: block; /* Show nav links when the menu toggle is activated */
 			}
 		}
+
+/* Featured Practice Section */
+#featured-practice {
+    background-color: #003366; /* Matches site theme */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#featured-practice h2 {
+    color: #FF6600; /* Highlight color for the header */
+}
+
+#practice-container {
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 2s ease; /* Smooth fade-in effect */
+    padding: 40px 20px;
+    border: 2px solid #FF6600; /* Border that matches site theme */
+    position: relative;
+    z-index: 1;
+}
+
+#practice-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Subtle horizontal gradient */
+    z-index: 0;
+    animation: slideIn 2s ease forwards;
+}
+
+#practice-container h3 {
+    color: #FF6600;
+    font-size: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+#practice-container p {
+    z-index: 1;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        left: 100%;
+    }
+}
