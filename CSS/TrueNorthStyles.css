@@ -188,73 +188,56 @@ footer a:hover {
     min-height: 60vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 80px 0;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden; /* Ensure overlay stays within the section */
 }
 
-#featured-practice h2 {
-    font-size: 1.5rem; /* Smaller font for "Featured Practice Area" */
-    text-transform: lowercase;
-    font-weight: 300;
-    margin-bottom: 20px;
-    z-index: 1;
+/* Left-side overlay */
+#featured-practice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Cover the left half of the section */
+    height: 100%;
+    background: rgba(0, 43, 92, 0.8); /* Semi-transparent dark blue */
+    z-index: 0; /* Ensure it's behind the content */
 }
 
-#practice-container {
-    background-size: cover;
-    background-position: center;
-    padding: 40px 20px;
-    border-radius: 10px;
-    z-index: 1;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Ensures text readability */
+/* Content container */
+#practice-content {
+    position: relative;
+    z-index: 1; /* Place above the overlay */
+    max-width: 50%; /* Align content to the left half */
+    text-align: left;
+    padding-left: 20px; /* Add padding for spacing */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Ensure text readability */
 }
 
-#practice-container h3 {
+#practice-content h3 {
     font-size: 3rem; /* Larger font for the practice name */
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
-#practice-container p {
+#practice-content p {
     font-size: 1.25rem;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-#practice-container a {
+#practice-content a {
     text-decoration: none;
     color: white;
-    background-color: #FF6600;
+    background-color: #FF6600; /* Highlight color for the button */
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s ease;
 }
 
-#practice-container a:hover {
+#practice-content a:hover {
     background-color: orangered;
-}
-
-/* Full background coverage for the section */
-#featured-practice::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    filter: brightness(0.6); /* Dark overlay */
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }

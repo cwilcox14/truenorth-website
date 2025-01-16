@@ -23,9 +23,8 @@
 
     <!-- Featured Services Section -->
 <section id="featured-practice" class="hero text-white py-5">
-    <div class="container text-center">
-        <h2 class="lead mb-4" style="font-size: 1.5rem;">Featured Practice Area</h2>
-        <div id="practice-container" class="rounded position-relative text-center py-5">
+    <div class="container d-flex align-items-center justify-content-start">
+        <div id="practice-content" class="text-start">
             <!-- Content dynamically populated by JavaScript -->
         </div>
     </div>
@@ -107,7 +106,7 @@
         {
             title: "Rates and Regulatory",
             description: "We offer a full range of technical support and expert witness services for utility rate cases.",
-            image: "images/rates-and-regulatory.webp", // Update if renamed
+            image: "images/ratesAndRegulatory.webp", // Updated image name
             link: "rates.html"
         }
     ];
@@ -115,23 +114,21 @@
     // Select a random practice
     const randomPractice = practices[Math.floor(Math.random() * practices.length)];
 
-    // Debug: Log the selected practice and image path
-    console.log('Selected practice:', randomPractice);
-
-    // Populate the section and container
+    // Populate the section and content
     const featuredPracticeSection = document.getElementById('featured-practice');
-    const practiceContainer = document.getElementById('practice-container');
+    const practiceContent = document.getElementById('practice-content');
 
     // Set the full background image
     featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
 
     // Populate practice details
-    practiceContainer.innerHTML = `
+    practiceContent.innerHTML = `
         <h3>${randomPractice.title}</h3>
         <p>${randomPractice.description}</p>
         <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
     `;
 });
+
 
 </script>
 	
