@@ -174,33 +174,12 @@
     </style>
 </head>
 <body>
-<header id="main-header" class="p-2">
-    <div class="container">
-        <a href="/" class="d-flex align-items-center" style="text-decoration: none;">
-            <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px; height: auto; margin-right: 10px;">
-            <div>
-                <h1 style="font-size: 1.8rem; font-weight: 700; margin: 0;">
-                    <span style="color: #002B5C;">True</span><span style="color: #008BCE;">North</span>
-                </h1>
-                <span style="color: #FF6600; font-size: 1rem;">Energy Partners</span>
-            </div>
-        </a>
-
-       
-
-        <!-- Navigation Links -->
-        <div id="dropdown-menu" class="nav-links">
-            <a href="practices.html">Practices</a>
-            <a href="experts.html">Experts</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </div>
-		 <!-- Hamburger Menu -->
-        <div class="hamburger" id="menu-toggle">
-            <div class="menu-icon"></div>
-        </div>
-    </div>
-</header>
+<div id="header"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+</script>
 
 <div>
     <!-- Hero Section -->
