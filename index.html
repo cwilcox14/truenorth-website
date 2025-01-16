@@ -22,35 +22,14 @@
     </section>
 
     <!-- Featured Services Section -->
-    <section class="hero" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
-        <div style="width: 50%; color: #003366; text-align: left;">
-            <h2 class="display-4">Featured Practice Areas</h2>
-            <p class="lead" style="color: #0056b3;">At TrueNorth, we provide a range of services designed to help your business thrive in the ever-evolving energy industry.</p>
-            <div id="divFeaturedPractices" class="row justify-content-start mt-3" style="width: 100%;">
-                <!-- LTSA Negotiation Button -->
-                <div class="col-md-5 mb-3">
-                    <a href="ltsa.html" style="text-decoration: none; cursor: pointer;">
-                        <div class="p-3 bg-white shadow rounded">
-                            <img src="images/LTSA.webp" alt="LTSA Negotiation" class="img-fluid rounded mb-2" loading="lazy">
-                            <h3 class="h5 text-dark">LTSA Negotiation</h3>
-                            <p class="text-secondary">We help energy companies navigate market changes with tailored strategic advice.</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- Rates and Regulatory Button -->
-                <div class="col-md-5 mb-3">
-                    <a href="rates.html" style="text-decoration: none; cursor: pointer;">
-                        <div class="p-3 bg-white shadow rounded">
-                            <img src="images/Rates and Regulatory.webp" alt="Rates and Regulatory" class="img-fluid rounded mb-2" loading="lazy">
-                            <h3 class="h5 text-dark">Rates and Regulatory</h3>
-                            <p class="text-secondary">We offer a full range of technical support and expert witness services for utility rate cases.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <a href="practices.html" class="btn btn-primary mt-3">Explore Our Practices</a>
+  <section id="featured-practice" class="hero text-white py-5">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">Featured Practice Area</h2>
+        <div id="practice-container" class="p-5 rounded" style="position: relative; overflow: hidden;">
+            <!-- Randomly selected practice content will be injected here -->
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Who We Are Section -->
     <section class="hero text-white py-3" 
@@ -115,6 +94,38 @@
 });
 
 </script>
+	
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Practice data
+        const practices = [
+            {
+                title: "LTSA Negotiation",
+                description: "We help energy companies navigate market changes with tailored strategic advice.",
+                image: "images/LTSA.webp", // Update with your image path
+                link: "ltsa.html"
+            },
+            {
+                title: "Rates and Regulatory",
+                description: "We offer a full range of technical support and expert witness services for utility rate cases.",
+                image: "images/Rates and Regulatory.webp", // Update with your image path
+                link: "rates.html"
+            }
+        ];
+
+        // Select a random practice
+        const randomPractice = practices[Math.floor(Math.random() * practices.length)];
+
+        // Populate the practice container
+        const practiceContainer = document.getElementById("practice-container");
+        practiceContainer.style.backgroundImage = `url(${randomPractice.image})`;
+        practiceContainer.innerHTML = `
+            <h3>${randomPractice.title}</h3>
+            <p>${randomPractice.description}</p>
+            <a href="${randomPractice.link}" class="btn btn-primary mt-3">Learn More</a>
+        `;
+    });
+</script>	
 	
 
 
