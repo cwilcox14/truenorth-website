@@ -25,7 +25,9 @@
 <section id="featured-practice" class="hero text-white py-5">
     <div class="container d-flex align-items-center justify-content-start">
         <div id="practice-content" class="text-start">
-            <!-- Content dynamically populated by JavaScript -->
+            <!-- Static Small Text -->
+            <p class="featured-group-text">Featured Practice Group</p>
+            <!-- Dynamic Content (JavaScript will populate this area) -->
         </div>
     </div>
 </section>
@@ -95,7 +97,7 @@
 </script>
 	
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+   document.addEventListener('DOMContentLoaded', () => {
     const practices = [
         {
             title: "LTSA Negotiation",
@@ -121,14 +123,13 @@
     // Set the full background image
     featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
 
-    // Populate practice details
-    practiceContent.innerHTML = `
+    // Populate practice details (title, description, and button)
+    practiceContent.innerHTML += `
         <h3>${randomPractice.title}</h3>
         <p>${randomPractice.description}</p>
         <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
     `;
 });
-
 
 </script>
 	
