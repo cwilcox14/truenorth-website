@@ -183,13 +183,14 @@
 		/* Styling for navigation links inside the header */
 		#main-header .nav-links a {
 			text-decoration: none;
-			color: #333; /* Default link color */
+			color: #003366; /* Blue color for default state */
+			font-weight: 600; /* Keep the bold look */
 			padding: 10px 15px; /* Add padding for better clickability */
 			display: inline-block;
+			transition: color 0.3s ease; /* Smooth color transition */
 		}
-
 		#main-header .nav-links a:hover {
-			color: #0056b3; /* Change link color on hover */
+			color: orangered; /* Change link color on hover */
 			text-decoration: underline; /* Optional: underline for hover effect */
 		}
 
