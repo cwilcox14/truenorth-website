@@ -191,7 +191,7 @@
 		}
 		#main-header .nav-links a:hover {
 			color: orangered; /* Change link color on hover */
-			text-decoration: underline; /* Optional: underline for hover effect */
+			text-decoration: none; /* Optional: underline for hover effect */
 		}
 
 		/* Mobile responsiveness for the header */
