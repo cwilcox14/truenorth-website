@@ -70,37 +70,46 @@
 </footer>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	
-<script>
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('header').innerHTML = data);
-</script>	
-	
-<script>
-    const menuToggle = document.getElementById("menu-toggle");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-    const menuIcon = menuToggle.querySelector(".menu-icon");
-
-    menuToggle.addEventListener("click", () => {
-        dropdownMenu.classList.toggle("show");
-        menuIcon.classList.toggle("open");
-    });
-</script>
 
 <script>
-    const header = document.getElementById('header');
-    let lastScrollY = window.scrollY;
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        // Fetch and insert the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > lastScrollY) {
-            // Scrolling down - hide the header
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up - show the header
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollY = window.scrollY;
+                // Initialize menu toggle functionality after header is loaded
+                const menuToggle = document.getElementById("menu-toggle");
+                const dropdownMenu = document.getElementById("dropdown-menu");
+                if (menuToggle && dropdownMenu) {
+                    const menuIcon = menuToggle.querySelector(".menu-icon");
+                    menuToggle.addEventListener("click", () => {
+                        dropdownMenu.classList.toggle("show");
+                        if (menuIcon) {
+                            menuIcon.classList.toggle("open");
+                        }
+                    });
+                }
+
+                // Add scroll functionality to hide/reveal header
+                const header = document.getElementById('main-header'); // Use the correct header ID
+                if (header) {
+                    let lastScrollY = window.scrollY;
+                    window.addEventListener('scroll', () => {
+                        if (window.scrollY > lastScrollY) {
+                            // Scrolling down - hide the header
+                            header.style.transform = 'translateY(-100%)';
+                        } else {
+                            // Scrolling up - show the header
+                            header.style.transform = 'translateY(0)';
+                        }
+                        lastScrollY = window.scrollY;
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
     });
 </script>
 	
