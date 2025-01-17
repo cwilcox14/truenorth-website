@@ -54,7 +54,7 @@
     </footer>
 	 <script src="main.js" defer></script>	
 	<script>
-	document.addEventListener('DOMContentLoaded', () => {
+			document.addEventListener('DOMContentLoaded', () => {
     const experts = [
         {
             name: "Troy Michaud",
@@ -76,11 +76,11 @@
             linkedin: "https://linkedin.com/in/chadwilcox",
             cv: "path/to/cWilcox_CV.pdf"
         }
-        // Add more experts here
     ];
 
     const expertsGrid = document.querySelector('.experts-grid');
-    
+    expertsGrid.innerHTML = ""; // Clear any pre-existing content in the grid
+
     experts.forEach(expert => {
         expertsGrid.innerHTML += `
             <div class="expert-tile">
