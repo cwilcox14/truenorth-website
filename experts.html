@@ -60,40 +60,43 @@
             name: "Troy Michaud",
             position: "Partner",
             photo: "images/Experts/tMichaud.jpg",
-            email: "john.doe@example.com",
+            email: "troy.michaud@example.com",
             phone: "+1 (234) 567-890",
-            vcard: "path/to/vcard.vcf",
-            linkedin: "https://linkedin.com/in/johndoe",
-            cv: "path/to/CV.pdf"
+            vcard: "path/to/tMichaud.vcf",
+            linkedin: "https://linkedin.com/in/troymichaud",
+            cv: "path/to/tMichaud_CV.pdf"
         },
         {
             name: "Chad Wilcox",
             position: "Partner",
             photo: "images/Experts/cWilcox.jpg",
-            email: "jane.smith@example.com",
+            email: "chad.wilcox@example.com",
             phone: "+1 (987) 654-3210",
-            vcard: "path/to/vcard2.vcf",
-            linkedin: "https://linkedin.com/in/janesmith",
-            cv: "path/to/CV2.pdf"
+            vcard: "path/to/cWilcox.vcf",
+            linkedin: "https://linkedin.com/in/chadwilcox",
+            cv: "path/to/cWilcox_CV.pdf"
         }
         // Add more experts here
     ];
 
     const expertsGrid = document.querySelector('.experts-grid');
+    
     experts.forEach(expert => {
         expertsGrid.innerHTML += `
             <div class="expert-tile">
-                <img src="${expert.photo}" alt="${expert.name}" class="expert-photo">
                 <div class="expert-info">
-                    <h3>${expert.name}</h3>
-                    <p class="position">${expert.position}</p>
-                    <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
-                    <div class="expert-links">
-                        <a href="${expert.vcard}" class="btn">V Card</a>
-                        <a href="${expert.linkedin}" target="_blank" class="btn">LinkedIn</a>
-                        <a href="${expert.cv}" download class="btn">Download CV</a>
+                    <div>
+                        <h3>${expert.name}</h3>
+                        <p class="position">${expert.position}</p>
                     </div>
+                    <img src="${expert.photo}" alt="${expert.name}" class="expert-photo">
+                </div>
+                <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
+                <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
+                <div class="expert-links">
+                    <a href="${expert.vcard}" class="btn"><i class="fas fa-id-card"></i> V Card</a>
+                    <a href="${expert.linkedin}" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="${expert.cv}" download class="btn"><i class="fas fa-file-download"></i> Download CV</a>
                 </div>
             </div>
         `;
