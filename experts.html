@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             position: "Partner",
             photo: "images/Experts/tMichaud.jpg",
             email: "troy.michaud@truenorthenergypartners.com",
-            phone: "1.706.313.6289",
+            phone: "1(706)313-6289",
             vcard: "path/to/tMichaud.vcf",
             linkedin: "https://linkedin.com/in/troymichaud",
             cv: "path/to/tMichaud_CV.pdf"
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             position: "Partner",
             photo: "images/Experts/cWilcox.jpg",
             email: "chad.wilcox@truenorthenergypartners.com",
-            phone: "1.207.400.1631",
+            phone: "1(207)400-1631",
             vcard: "path/to/cWilcox.vcf",
             linkedin: "https://linkedin.com/in/chadwilcox",
             cv: "path/to/cWilcox_CV.pdf"
@@ -64,36 +64,35 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const expertsGrid = document.querySelector('.experts-grid');
-    expertsGrid.innerHTML = `<div class="row"></div>`; // Use a proper Bootstrap row
-    const row = expertsGrid.querySelector('.row');
+    expertsGrid.innerHTML = ""; // Clear any pre-existing content in the grid
 
     experts.forEach(expert => {
-    expertsGrid.innerHTML += `
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <a href="experts/profile.html?expert=${expert.name.replace(/\s+/g, '')}" style="text-decoration: none; color: inherit;">
+        expertsGrid.innerHTML += `
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="expert-tile">
-                    <div class="d-flex align-items-center">
-                        <div style="text-align: left; flex-grow: 1;">
-                            <h3 style="color: #003366; font-weight: bold;">${expert.name}</h3>
-                            <p class="position" style="color: #005082; font-weight: bold; margin-bottom: 5px;">${expert.position}</p>
-                            <div style="width: 50px; height: 3px; background-color: #003366; margin-top: 5px;"></div>
+                    <a href="experts/profile.html?expert=${expert.name.replace(/\s+/g, '')}" style="text-decoration: none; color: inherit;">
+                        <div class="d-flex align-items-center">
+                            <div style="text-align: left; flex-grow: 1;">
+                                <h3 style="color: #003366; font-weight: bold;">${expert.name}</h3>
+                                <p class="position" style="color: #005082; font-weight: bold; margin-bottom: 5px;">${expert.position}</p>
+                                <div style="width: 50px; height: 3px; background-color: #003366; margin-top: 5px;"></div>
+                            </div>
+                            <img src="${expert.photo}" alt="${expert.name}" class="expert-photo" style="margin-left: 10px;">
                         </div>
-                        <img src="${expert.photo}" alt="${expert.name}" class="expert-photo" style="margin-left: 10px;">
-                    </div>
-                    <div class="expert-contact" style="text-align: left; margin-top: 10px;">
-                        <p style="margin-bottom: 5px; color: #666;"><a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a></p>
-                        <p style="margin-bottom: 5px; color: #666;"><a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone} (direct)</a></p>
-                    </div>
-                    <div class="expert-links" style="text-align: left; margin-top: 15px;">
-                        <a href="${expert.vcard}" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fas fa-id-card"></i> VCard</a>
-                        <a href="${expert.linkedin}" target="_blank" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="${expert.cv}" download class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366;"><i class="fas fa-file-download"></i> CV</a>
-                    </div>
+                        <div class="expert-contact" style="text-align: left; margin-top: 10px;">
+                            <p style="margin-bottom: 5px; color: #666;"><a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a></p>
+                            <p style="margin-bottom: 5px; color: #666;"><a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone} (direct)</a></p>
+                        </div>
+                        <div class="expert-links" style="text-align: left; margin-top: 15px;">
+                            <a href="${expert.vcard}" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fas fa-id-card"></i> VCard</a>
+                            <a href="${expert.linkedin}" target="_blank" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="${expert.cv}" download class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366;"><i class="fas fa-file-download"></i> CV</a>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    `;
-});
+            </div>
+        `;
+    });
 
     const styles = document.createElement('style');
     styles.innerHTML = `
@@ -107,6 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
+            transition: transform 0.2s ease;
+        }
+
+        .expert-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
         }
 
         .expert-tile img.expert-photo {
@@ -115,10 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
             border-radius: 50%;
             object-fit: cover;
         }
+
+        .experts-grid .col-lg-4 {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        .experts-grid .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .experts-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .experts-grid .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .experts-grid .col-sm-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     `;
     document.head.appendChild(styles);
 });
-
 
 
 	</script>
