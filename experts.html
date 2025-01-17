@@ -72,19 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="expert-tile">
                     <div class="d-flex align-items-center">
                         <div style="text-align: left; flex-grow: 1;">
-                            <h3 style="color: #0056b3; font-weight: bold;">${expert.name}</h3>
-                            <p class="position" style="color: #89CFF0; font-weight: bold;">${expert.position}</p>
+                            <h3 style="color: #003366; font-weight: bold;">${expert.name}</h3>
+                            <p class="position" style="color: #003366; font-weight: bold; text-decoration: underline;">${expert.position}</p>
                         </div>
                         <img src="${expert.photo}" alt="${expert.name}" class="expert-photo" style="margin-left: 10px;">
                     </div>
-                    <div class="expert-contact" style="text-align: left; margin-top: 15px;">
-                        <p><a href="mailto:${expert.email}" style="text-decoration: none;">${expert.email}</a></p>
-                        <p><a href="tel:${expert.phone}" style="text-decoration: none;">${expert.phone}</a></p>
+                    <div class="expert-contact" style="text-align: left; margin-top: 10px;">
+                        <p style="margin-bottom: 5px;"><a href="mailto:${expert.email}" style="text-decoration: none;">${expert.email}</a></p>
+                        <p style="margin-bottom: 5px;"><a href="tel:${expert.phone}" style="text-decoration: none;">${expert.phone}</a></p>
                     </div>
-                    <div class="expert-links" style="text-align: left; margin-top: 10px;">
-                        <a href="${expert.vcard}" class="expert-link" style="text-decoration: none;"><i class="fas fa-id-card"></i> VCard</a>
-                        <a href="${expert.linkedin}" target="_blank" class="expert-link" style="text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="${expert.cv}" download class="expert-link" style="text-decoration: none;"><i class="fas fa-file-download"></i> CV</a>
+                    <div class="expert-links" style="text-align: left; margin-top: 15px;">
+                        <a href="${expert.vcard}" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fas fa-id-card"></i> VCard</a>
+                        <a href="${expert.linkedin}" target="_blank" class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366; margin-right: 20px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="${expert.cv}" download class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366;"><i class="fas fa-file-download"></i> CV</a>
                     </div>
                 </div>
             </div>
