@@ -13,6 +13,7 @@ body {
     padding-top: 80px; /* Adjusted for the fixed header */
 }
 
+/* Header Styles */
 header {
     position: sticky;
     top: 0;
@@ -45,32 +46,13 @@ header .container {
     color: orangered; /* Change link color on hover */
 }
 
+/* Hamburger Menu Styles */
 .hamburger {
     display: none;
     cursor: pointer;
     font-size: 2rem;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
+    position: relative;
+    z-index: 10;
 }
 
 .menu-icon {
@@ -113,39 +95,36 @@ header .container {
     bottom: 0;
 }
 
-h2 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .nav-links.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* General Button Style */
-.btn-custom {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
-}
-
-.btn-custom:hover {
-    background-color: orangered; /* Change to orangered on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-}
-
-.btn-primary {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    background-color: orangered;
-    border: none;
-}
-
+/* Section Styles */
 .hero {
     min-height: 30vh;
     display: flex;
@@ -175,6 +154,7 @@ h2 {
     }
 }
 
+/* Footer Styles */
 footer {
     background-color: #003366;
     padding: 20px 0;
@@ -188,18 +168,6 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Styles for the main header */
-#main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
 /* Featured Practice Section */
@@ -253,4 +221,32 @@ footer a:hover {
 
 #practice-content a:hover {
     background-color: orangered;
+}
+
+/* General Button Styles */
+.btn-custom {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.btn-custom:hover {
+    background-color: orangered; /* Change to orangered on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.btn-primary {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: orangered;
+    border: none;
 }
