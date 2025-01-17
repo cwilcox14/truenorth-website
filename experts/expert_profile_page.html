@@ -1,10 +1,78 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Profile | TrueNorth Energy Partners</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/TrueNorthStyles.css">
 </head>
-
 <body>
+    <div class="container py-5">
+        <a href="../index.html" class="btn btn-secondary mb-4">Back to Experts</a>
+        <div id="expert-profile" class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-4">
+                    <img id="expert-photo" src="" alt="Expert Photo" class="rounded-circle me-4" style="width: 100px; height: 100px; object-fit: cover;">
+                    <div>
+                        <h1 id="expert-name" style="color: #003366; font-weight: bold;"></h1>
+                        <h4 id="expert-position" style="color: #005082; font-weight: bold;"></h4>
+                    </div>
+                </div>
+                <p id="expert-email" class="mb-2"><strong>Email:</strong> <a href="mailto:" style="text-decoration: none; color: #666;"></a></p>
+                <p id="expert-phone" class="mb-4"><strong>Phone:</strong> <a href="tel:" style="text-decoration: none; color: #666;"></a></p>
+                <div id="expert-links">
+                    <a href="#" id="vcard-link" class="btn btn-outline-primary me-2"><i class="fas fa-id-card"></i> VCard</a>
+                    <a href="#" id="linkedin-link" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" id="cv-link" class="btn btn-outline-primary"><i class="fas fa-file-download"></i> CV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate data passed from the main page
+        const experts = {
+            "TroyMichaud": {
+                name: "Troy Michaud",
+                position: "Partner",
+                photo: "../images/Experts/tMichaud.jpg",
+                email: "troy.michaud@truenorthenergypartners.com",
+                phone: "1(706)313-6289",
+                vcard: "path/to/tMichaud.vcf",
+                linkedin: "https://linkedin.com/in/troymichaud",
+                cv: "path/to/tMichaud_CV.pdf"
+            },
+            "ChadWilcox": {
+                name: "Chad Wilcox",
+                position: "Partner",
+                photo: "../images/Experts/cWilcox.jpg",
+                email: "chad.wilcox@truenorthenergypartners.com",
+                phone: "1(207)400-1631",
+                vcard: "path/to/cWilcox.vcf",
+                linkedin: "https://linkedin.com/in/chadwilcox",
+                cv: "path/to/cWilcox_CV.pdf"
+            }
+        };
+
+        // Extract the expert's identifier from the URL
+        const params = new URLSearchParams(window.location.search);
+        const expertId = params.get('expert');
+        const expert = experts[expertId];
+
+        if (expert) {
+            document.getElementById('expert-name').textContent = expert.name;
+            document.getElementById('expert-position').textContent = expert.position;
+            document.getElementById('expert-photo').src = expert.photo;
+            document.getElementById('expert-email').innerHTML = `<strong>Email:</strong> <a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a>`;
+            document.getElementById('expert-phone').innerHTML = `<strong>Phone:</strong> <a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone}</a>`;
+            document.getElementById('vcard-link').href = expert.vcard;
+            document.getElementById('linkedin-link').href = expert.linkedin;
+            document.getElementById('cv-link').href = expert.cv;
+        } else {
+            document.getElementById('expert-profile').innerHTML = `<p>Expert not found.</p>`;
+        }
+    </script>
 </body>
 </html>
