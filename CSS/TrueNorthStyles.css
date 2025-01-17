@@ -74,7 +74,7 @@ header .container {
     }
 }
 
-.menu-icon {
+.hamburger-icon {
     width: 30px;
     height: 3px;
     background-color: #003366;
@@ -82,8 +82,8 @@ header .container {
     transition: all 0.3s ease;
 }
 
-.menu-icon::before,
-.menu-icon::after {
+.hamburger-icon::before,
+.hamburger-icon::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -92,24 +92,24 @@ header .container {
     transition: all 0.3s ease;
 }
 
-.menu-icon::before {
+.hamburger-icon::before {
     top: -8px;
 }
 
-.menu-icon::after {
+.hamburger-icon::after {
     bottom: -8px;
 }
 
-.menu-icon.open {
+.hamburger-icon.open {
     background-color: transparent;
 }
 
-.menu-icon.open::before {
+.hamburger-icon.open::before {
     transform: rotate(45deg);
     top: 0;
 }
 
-.menu-icon.open::after {
+.hamburger-icon.open::after {
     transform: rotate(-45deg);
     bottom: 0;
 }
