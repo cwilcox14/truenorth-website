@@ -117,6 +117,15 @@ header .container {
     bottom: 0;
 }
 
+#menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
 h2 {
     font-size: 2.5rem;
     line-height: 1.2;
