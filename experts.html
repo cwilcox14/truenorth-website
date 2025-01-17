@@ -64,10 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const expertsGrid = document.querySelector('.experts-grid');
-    expertsGrid.innerHTML = ""; // Clear any pre-existing content in the grid
+    expertsGrid.innerHTML = `<div class="row"></div>`; // Use a proper Bootstrap row
+    const row = expertsGrid.querySelector('.row');
 
     experts.forEach(expert => {
-        expertsGrid.innerHTML += `
+        row.innerHTML += `
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="expert-tile">
                     <div class="d-flex align-items-center">
@@ -92,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     });
 
-    // Remove custom grid styles to let Bootstrap handle layout
     const styles = document.createElement('style');
     styles.innerHTML = `
         .expert-tile {
@@ -113,38 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
             border-radius: 50%;
             object-fit: cover;
         }
-
-        .experts-grid .col-lg-4 {
-            flex: 0 0 33.3333%;
-            max-width: 33.3333%;
-        }
-
-        .experts-grid .col-md-6 {
-            flex: 0 0 50%;
-            max-width: 50%;
-        }
-
-        .experts-grid {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .experts-grid .col-md-6 {
-                flex: 0 0 50%;
-                max-width: 50%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .experts-grid .col-sm-12 {
-                flex: 0 0 100%;
-                max-width: 100%;
-            }
-        }
     `;
     document.head.appendChild(styles);
 });
+
 
 
 	</script>
