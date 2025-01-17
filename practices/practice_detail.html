@@ -61,38 +61,124 @@
                 ],
                 help: "TrueNorth Energy Partners collaborates with clients to create strategies that adapt to evolving market conditions. We provide actionable insights and practical solutions tailored to your specific needs."
             },
-            // Additional practice areas can be added here
+            "utility-regulation": {
+                title: "Utility Regulation",
+                description: "Assisting utilities with rate design, cost recovery, and compliance to support sustainable operations and customer satisfaction.",
+                overview: "Our Utility Regulation practice provides in-depth analysis and guidance to navigate regulatory requirements and achieve operational excellence.",
+                expertise: [
+                    "Rate design and analysis",
+                    "Regulatory compliance",
+                    "Cost recovery strategies"
+                ],
+                help: "We help utilities create efficient and compliant operations, ensuring long-term sustainability and customer satisfaction."
+            },
+            "renewable-energy": {
+                title: "Renewable Energy",
+                description: "Guiding the transition to clean energy with expertise in renewable integration, financing, and policy development.",
+                overview: "Our Renewable Energy practice helps clients transition to clean energy through expert guidance in renewable integration and policy development.",
+                expertise: [
+                    "Renewable energy integration",
+                    "Financing strategies",
+                    "Policy development"
+                ],
+                help: "We work with clients to accelerate the adoption of renewable energy solutions tailored to their unique needs."
+            },
+            "grid-modernization": {
+                title: "Grid Modernization",
+                description: "Supporting infrastructure upgrades and advanced technology integration to enhance grid reliability and resilience.",
+                overview: "Our Grid Modernization practice supports clients in modernizing energy infrastructure to improve reliability and efficiency.",
+                expertise: [
+                    "Infrastructure upgrades",
+                    "Advanced technology integration",
+                    "Grid resilience strategies"
+                ],
+                help: "We assist clients in creating reliable, efficient, and future-ready grid systems."
+            },
+            "energy-storage": {
+                title: "Energy Storage",
+                description: "Delivering expertise in battery storage solutions, deployment strategies, and market opportunities.",
+                overview: "Our Energy Storage practice offers expert guidance on battery solutions and deployment strategies for optimized energy use.",
+                expertise: [
+                    "Battery storage solutions",
+                    "Deployment strategies",
+                    "Market opportunity analysis"
+                ],
+                help: "We help clients implement energy storage solutions that align with their operational and market goals."
+            },
+            "policy-analysis": {
+                title: "Policy Analysis",
+                description: "Analyzing regulatory frameworks and policies to provide actionable recommendations for stakeholders.",
+                overview: "Our Policy Analysis practice provides insights into regulatory frameworks and actionable strategies for stakeholders.",
+                expertise: [
+                    "Regulatory framework analysis",
+                    "Actionable strategy development",
+                    "Stakeholder engagement"
+                ],
+                help: "We guide stakeholders through the complexities of energy policy and regulation with tailored recommendations."
+            },
+            "ltsa-negotiation": {
+                title: "LTSA Negotiation",
+                description: "Expert support in negotiating Long-Term Service Agreements (LTSA) to optimize costs and performance for energy assets.",
+                overview: "Our LTSA Negotiation practice provides specialized expertise to negotiate agreements that align with operational and financial objectives.",
+                expertise: [
+                    "Agreement structuring",
+                    "Cost optimization",
+                    "Performance benchmarking"
+                ],
+                help: "We assist clients in creating LTSAs that deliver long-term value and operational efficiency."
+            },
+            "rates-and-regulatory": {
+                title: "Rates and Regulatory",
+                description: "Providing in-depth analysis and strategic guidance on rates, tariffs, and regulatory compliance for the energy sector.",
+                overview: "Our Rates and Regulatory practice helps clients navigate the complexities of tariffs and compliance with tailored strategies.",
+                expertise: [
+                    "Rates and tariff analysis",
+                    "Strategic compliance guidance",
+                    "Regulatory reporting"
+                ],
+                help: "We ensure our clients achieve compliance while maximizing operational and financial performance."
+            },
+            "utility-accounting": {
+                title: "Utility Accounting",
+                description: "Expertise in utility accounting practices to ensure accurate financial reporting and regulatory compliance.",
+                overview: "Our Utility Accounting practice provides clients with reliable strategies for accurate financial reporting and compliance.",
+                expertise: [
+                    "Financial reporting accuracy",
+                    "Regulatory accounting",
+                    "Audit preparation"
+                ],
+                help: "We support utilities in maintaining precise and compliant financial operations."
+            }
         };
 
         // Extract practice ID from the URL (e.g., ?practice=energy-markets)
-const urlParams = new URLSearchParams(window.location.search);
-const practiceId = urlParams.get('practice');
-const practice = practices[practiceId];
+        const urlParams = new URLSearchParams(window.location.search);
+        const practiceId = urlParams.get('practice');
 
-if (practiceId && practice) {
-    document.getElementById('page-title').textContent = `${practice.title} | TrueNorth Energy Partners`;
-    document.getElementById('practice-title').textContent = practice.title;
-    document.getElementById('practice-description').textContent = practice.description;
-    document.getElementById('overview-content').textContent = practice.overview;
+        if (practiceId && practices[practiceId]) {
+            const practice = practices[practiceId];
 
-    const expertiseList = document.getElementById('expertise-list');
-    expertiseList.innerHTML = '';
-    practice.expertise.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        expertiseList.appendChild(li);
-    });
+            document.getElementById('page-title').textContent = `${practice.title} | TrueNorth Energy Partners`;
+            document.getElementById('practice-title').textContent = practice.title;
+            document.getElementById('practice-description').textContent = practice.description;
+            document.getElementById('overview-content').textContent = practice.overview;
 
-    document.getElementById('help-content').textContent = practice.help;
-} else {
-    console.error(`Invalid practice ID: ${practiceId}`);
-    document.getElementById('practice-title').textContent = "Practice Not Found";
-    document.getElementById('practice-description').textContent = "The requested practice area could not be loaded.";
-    document.getElementById('overview-content').textContent = "Please check the URL and try again.";
-    document.getElementById('expertise-list').innerHTML = "";
-    document.getElementById('help-content').textContent = "";
-}
+            const expertiseList = document.getElementById('expertise-list');
+            expertiseList.innerHTML = '';
+            practice.expertise.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                expertiseList.appendChild(li);
+            });
 
+            document.getElementById('help-content').textContent = practice.help;
+        } else {
+            document.getElementById('practice-title').textContent = "Practice Not Found";
+            document.getElementById('practice-description').textContent = "The requested practice area could not be loaded.";
+            document.getElementById('overview-content').textContent = "Please check the URL and try again.";
+            document.getElementById('expertise-list').innerHTML = "";
+            document.getElementById('help-content').textContent = "";
+        }
     </script>
 </body>
 </html>
