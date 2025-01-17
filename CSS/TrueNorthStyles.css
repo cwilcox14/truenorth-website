@@ -235,7 +235,6 @@ footer a:hover {
     z-index: 1; /* Place above the overlay */
     max-width: 50%; /* Align content to the left half */
     text-align: left;
-    padding-left: 20px; /* Add padding for spacing */
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8); /* Ensure text readability */
 }
 
