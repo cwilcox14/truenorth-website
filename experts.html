@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Troy Michaud",
             position: "Partner",
             photo: "images/Experts/tMichaud.jpg",
-            email: "troy.michaud@example.com",
-            phone: "+1 (234) 567-890",
+            email: "troy.michaud@truenorthenergypartners.com",
+            phone: "1(706)313-6289",
             vcard: "path/to/tMichaud.vcf",
             linkedin: "https://linkedin.com/in/troymichaud",
             cv: "path/to/tMichaud_CV.pdf"
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Chad Wilcox",
             position: "Partner",
             photo: "images/Experts/cWilcox.jpg",
-            email: "chad.wilcox@example.com",
-            phone: "+1 (987) 654-3210",
+            email: "chad.wilcox@truenorthenergypartners.com",
+            phone: "1(207)400-1631",
             vcard: "path/to/cWilcox.vcf",
             linkedin: "https://linkedin.com/in/chadwilcox",
             cv: "path/to/cWilcox_CV.pdf"
@@ -64,12 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const expertsGrid = document.querySelector('.experts-grid');
-    expertsGrid.innerHTML = `<div class="row"></div>`; // Wrap columns in a Bootstrap row
-
-    const row = expertsGrid.querySelector('.row');
+    expertsGrid.innerHTML = ""; // Clear any pre-existing content in the grid
 
     experts.forEach(expert => {
-        row.innerHTML += `
+        expertsGrid.innerHTML += `
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="expert-tile">
                     <div class="d-flex align-items-center">
@@ -94,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     });
 
+    // Remove custom grid styles to let Bootstrap handle layout
     const styles = document.createElement('style');
     styles.innerHTML = `
         .expert-tile {
@@ -115,15 +114,30 @@ document.addEventListener('DOMContentLoaded', () => {
             object-fit: cover;
         }
 
+        .experts-grid .col-lg-4 {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        .experts-grid .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .experts-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         @media (max-width: 768px) {
-            .col-md-6 {
+            .experts-grid .col-md-6 {
                 flex: 0 0 50%;
                 max-width: 50%;
             }
         }
 
         @media (max-width: 576px) {
-            .col-sm-12 {
+            .experts-grid .col-sm-12 {
                 flex: 0 0 100%;
                 max-width: 100%;
             }
