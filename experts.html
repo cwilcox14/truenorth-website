@@ -68,8 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const row = expertsGrid.querySelector('.row');
 
     experts.forEach(expert => {
-        row.innerHTML += `
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+    expertsGrid.innerHTML += `
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <a href="experts/profile.html?expert=${expert.name.replace(/\s+/g, '')}" style="text-decoration: none; color: inherit;">
                 <div class="expert-tile">
                     <div class="d-flex align-items-center">
                         <div style="text-align: left; flex-grow: 1;">
@@ -89,9 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="${expert.cv}" download class="expert-link" style="text-decoration: none; font-weight: bold; color: #003366;"><i class="fas fa-file-download"></i> CV</a>
                     </div>
                 </div>
-            </div>
-        `;
-    });
+            </a>
+        </div>
+    `;
+});
 
     const styles = document.createElement('style');
     styles.innerHTML = `
