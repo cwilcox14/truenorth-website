@@ -45,15 +45,7 @@ header .container {
     color: orangered; /* Change link color on hover */
 }
 
-#menu-toggle {
-    display: none; /* Hidden by default, shown on smaller screens via media query */
-    width: 40px; /* Explicit width */
-    height: 40px; /* Explicit height */
-    justify-content: center; /* Center the icon */
-    align-items: center;
-    cursor: pointer;
-    z-index: 20; /* Ensure it's on top */
-}
+
 
 .hamburger {
     display: none;
