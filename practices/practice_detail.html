@@ -65,33 +65,34 @@
         };
 
         // Extract practice ID from the URL (e.g., ?practice=energy-markets)
-        const urlParams = new URLSearchParams(window.location.search);
-        const practiceId = urlParams.get('practice');
+const urlParams = new URLSearchParams(window.location.search);
+const practiceId = urlParams.get('practice');
+const practice = practices[practiceId];
 
-        if (practiceId && practices[practiceId]) {
-            const practice = practices[practiceId];
+if (practiceId && practice) {
+    document.getElementById('page-title').textContent = `${practice.title} | TrueNorth Energy Partners`;
+    document.getElementById('practice-title').textContent = practice.title;
+    document.getElementById('practice-description').textContent = practice.description;
+    document.getElementById('overview-content').textContent = practice.overview;
 
-            document.getElementById('page-title').textContent = `${practice.title} | TrueNorth Energy Partners`;
-            document.getElementById('practice-title').textContent = practice.title;
-            document.getElementById('practice-description').textContent = practice.description;
-            document.getElementById('overview-content').textContent = practice.overview;
+    const expertiseList = document.getElementById('expertise-list');
+    expertiseList.innerHTML = '';
+    practice.expertise.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        expertiseList.appendChild(li);
+    });
 
-            const expertiseList = document.getElementById('expertise-list');
-            expertiseList.innerHTML = '';
-            practice.expertise.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                expertiseList.appendChild(li);
-            });
+    document.getElementById('help-content').textContent = practice.help;
+} else {
+    console.error(`Invalid practice ID: ${practiceId}`);
+    document.getElementById('practice-title').textContent = "Practice Not Found";
+    document.getElementById('practice-description').textContent = "The requested practice area could not be loaded.";
+    document.getElementById('overview-content').textContent = "Please check the URL and try again.";
+    document.getElementById('expertise-list').innerHTML = "";
+    document.getElementById('help-content').textContent = "";
+}
 
-            document.getElementById('help-content').textContent = practice.help;
-        } else {
-            document.getElementById('practice-title').textContent = "Practice Not Found";
-            document.getElementById('practice-description').textContent = "The requested practice area could not be loaded.";
-            document.getElementById('overview-content').textContent = "Please check the URL and try again.";
-            document.getElementById('expertise-list').innerHTML = "";
-            document.getElementById('help-content').textContent = "";
-        }
     </script>
 </body>
 </html>
