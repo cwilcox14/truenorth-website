@@ -45,7 +45,7 @@
             name: "Troy Michaud",
             position: "Partner",
             photo: "images/Experts/tMichaud.jpg",
-            email: "troy.michaud@truenorthenergypartners.com",
+            email: "troy.michaud@example.com",
             phone: "+1 (234) 567-890",
             vcard: "path/to/tMichaud.vcf",
             linkedin: "https://linkedin.com/in/troymichaud",
@@ -55,7 +55,7 @@
             name: "Chad Wilcox",
             position: "Partner",
             photo: "images/Experts/cWilcox.jpg",
-            email: "chad.wilcox@truenorthenergypartners.com",
+            email: "chad.wilcox@example.com",
             phone: "+1 (987) 654-3210",
             vcard: "path/to/cWilcox.vcf",
             linkedin: "https://linkedin.com/in/chadwilcox",
@@ -71,8 +71,8 @@
             <div class="expert-tile">
                 <div class="expert-info">
                     <div>
-                        <h3>${expert.name}</h3>
-                        <p class="position">${expert.position}</p>
+                        <h3 style="color: #0056b3; font-weight: bold;">${expert.name}</h3>
+                        <p class="position" style="color: #555; font-style: italic;">${expert.position}</p>
                     </div>
                     <img src="${expert.photo}" alt="${expert.name}" class="expert-photo">
                 </div>
@@ -89,6 +89,7 @@
         `;
     });
 });
+
 
 	</script>
 </body>
