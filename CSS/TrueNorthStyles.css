@@ -76,7 +76,7 @@ header .container {
 
 .hamburger-icon {
 	border: 1px solid red; /* Debugging border */
-    width: 30px;
+    width: 300px;
     height: 3px;
     background-color: #003366;
     position: relative;
