@@ -1,7 +1,7 @@
 // JavaScript Document
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch and insert the header
-    fetch('header.html')
+    fetch('/header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header').innerHTML = data;
