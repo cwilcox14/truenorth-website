@@ -29,26 +29,21 @@
         <h2>Our Experts</h2>
         <div class="experts-grid">
             <!-- Example Expert Tile -->
-            <div class="expert-tile">
-                <img src="path/to/expert-photo.jpg" alt="Expert Name" class="expert-photo">
-                <div class="expert-info">
-                    <h3>John Doe</h3>
-                    <p class="position">Senior Consultant</p>
-                    <p><strong>Email:</strong> <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                  <div class="expert-links">
-    <a href="path/to/vcard.vcf" class="btn">
-        <i class="fas fa-id-card"></i> V Card
-    </a>
-    <a href="https://linkedin.com/in/johndoe" target="_blank" class="btn">
-        <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="path/to/CV.pdf" download class="btn">
-        <i class="fas fa-file-download"></i> Download CV
-    </a>
+          <div class="expert-tile">
+    <div class="expert-info">
+        <h3>${expert.name}</h3>
+        <p class="position">${expert.position}</p>
+        <img src="${expert.photo}" alt="${expert.name}" class="expert-photo">
+    </div>
+    <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
+    <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
+    <div class="expert-links">
+        <a href="${expert.vcard}" class="btn"><i class="fas fa-id-card"></i> V Card</a>
+        <a href="${expert.linkedin}" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="${expert.cv}" download class="btn"><i class="fas fa-file-download"></i> Download CV</a>
+    </div>
 </div>
-                </div>
-            </div>
+
             <!-- Additional expert tiles can go here -->
         </div>
     </div>
