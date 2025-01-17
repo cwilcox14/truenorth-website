@@ -68,39 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     experts.forEach(expert => {
         expertsGrid.innerHTML += `
-            <div class="expert-tile">
-                <div class="expert-info">
-                    <div style="text-align: left;">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="expert-tile">
+                    <div class="expert-info" style="text-align: left;">
                         <h3 style="color: #0056b3; font-weight: bold;">${expert.name}</h3>
                         <p class="position" style="color: #555; font-style: italic;">${expert.position}</p>
                     </div>
                     <img src="${expert.photo}" alt="${expert.name}" class="expert-photo">
-                </div>
-                <div class="expert-contact" style="text-align: left;">
-                    <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
-                </div>
-                <div class="expert-links">
-                    <a href="${expert.vcard}" class="expert-link"><i class="fas fa-id-card"></i> VCard</a>
-                    <a href="${expert.linkedin}" target="_blank" class="expert-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="${expert.cv}" download class="expert-link"><i class="fas fa-file-download"></i> CV</a>
+                    <div class="expert-contact" style="text-align: left;">
+                        <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
+                    </div>
+                    <div class="expert-links">
+                        <a href="${expert.vcard}" class="expert-link"><i class="fas fa-id-card"></i> VCard</a>
+                        <a href="${expert.linkedin}" target="_blank" class="expert-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="${expert.cv}" download class="expert-link"><i class="fas fa-file-download"></i> CV</a>
+                    </div>
                 </div>
             </div>
         `;
     });
 
-    // Set grid layout for three tiles per row with fixed tile size
+    // Remove custom grid styles to let Bootstrap handle layout
     const styles = document.createElement('style');
     styles.innerHTML = `
-        .experts-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            justify-items: center;
-        }
-
         .expert-tile {
-            width: 300px;
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -116,21 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
             object-fit: cover;
             margin: 10px 0;
         }
-
-        @media (max-width: 768px) {
-            .experts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .experts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     `;
     document.head.appendChild(styles);
 });
+
 
 
 	</script>
