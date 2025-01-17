@@ -39,6 +39,7 @@ header .container {
     font-weight: 600;
     padding: 10px 15px;
     transition: color 0.3s ease; /* Smooth color transition */
+	font-size: 1.25rem
 }
 
 .nav-links a:hover {
