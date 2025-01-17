@@ -118,6 +118,24 @@ h2 {
     line-height: 1.2;
 }
 
+/* General Button Style */
+.btn-custom {
+    text-decoration: none;
+    color: white;
+    background-color: #FF6600; /* Default orange color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+.btn-custom:hover {
+    background-color: orangered; /* Change to orangered on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
 .btn-primary {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
