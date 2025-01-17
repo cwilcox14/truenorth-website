@@ -13,30 +13,56 @@
     <div id="header"></div>
 
     <!-- Hero Section -->
-    <section class="hero text-white py-3" style="background-color: #0056b3;">
-        <div class="container">
-            <h1>Expert Profile</h1>
+    <section class="hero text-white py-5" style="background-color: #0056b3;">
+        <div class="container d-flex align-items-center">
+            <img id="expert-photo" src="" alt="Expert Photo" class="rounded-circle me-4" style="width: 150px; height: 150px; object-fit: cover;">
+            <div>
+                <h1 id="expert-name" style="color: #ffffff; font-weight: bold;"></h1>
+                <h4 id="expert-position" style="color: #dce4f0; font-weight: bold;"></h4>
+            </div>
         </div>
     </section>
 
     <!-- Expert Profile Section -->
     <div class="container py-5">
-        <a href="../index.html" class="btn btn-secondary mb-4">Back to Experts</a>
-        <div id="expert-profile" class="card">
-            <div class="card-body">
-                <div class="d-flex align-items-center mb-4">
-                    <img id="expert-photo" src="" alt="Expert Photo" class="rounded-circle me-4" style="width: 100px; height: 100px; object-fit: cover;">
-                    <div>
-                        <h1 id="expert-name" style="color: #003366; font-weight: bold;"></h1>
-                        <h4 id="expert-position" style="color: #005082; font-weight: bold;"></h4>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Information</h5>
+                        <p id="expert-email"><i class="fas fa-envelope"></i> <a href="mailto:" style="text-decoration: none; color: #0056b3;"></a></p>
+                        <p id="expert-phone"><i class="fas fa-phone"></i> <a href="tel:" style="text-decoration: none; color: #0056b3;"></a></p>
+                        <hr>
+                        <h6>Downloads</h6>
+                        <a href="#" id="vcard-link" class="d-block mb-2" style="color: #0056b3;"><i class="fas fa-id-card"></i> VCard</a>
+                        <a href="#" id="linkedin-link" class="d-block mb-2" style="color: #0056b3;" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" id="cv-link" class="d-block" style="color: #0056b3;"><i class="fas fa-file-download"></i> CV</a>
                     </div>
                 </div>
-                <p id="expert-email" class="mb-2"><strong>Email:</strong> <a href="mailto:" style="text-decoration: none; color: #666;"></a></p>
-                <p id="expert-phone" class="mb-4"><strong>Phone:</strong> <a href="tel:" style="text-decoration: none; color: #666;"></a></p>
-                <div id="expert-links">
-                    <a href="#" id="vcard-link" class="btn btn-outline-primary me-2"><i class="fas fa-id-card"></i> VCard</a>
-                    <a href="#" id="linkedin-link" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#" id="cv-link" class="btn btn-outline-primary"><i class="fas fa-file-download"></i> CV</a>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">About</h5>
+                        <p id="expert-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <hr>
+                        <h5 class="card-title">Experience</h5>
+                        <ul id="expert-experience">
+                            <li>Experience detail 1</li>
+                            <li>Experience detail 2</li>
+                            <li>Experience detail 3</li>
+                        </ul>
+                        <hr>
+                        <h5 class="card-title">Publications</h5>
+                        <ul id="expert-publications">
+                            <li><a href="#" style="color: #0056b3;">Publication Title 1</a></li>
+                            <li><a href="#" style="color: #0056b3;">Publication Title 2</a></li>
+                            <li><a href="#" style="color: #0056b3;">Publication Title 3</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +93,17 @@
                     phone: "1(706)313-6289",
                     vcard: "path/to/tMichaud.vcf",
                     linkedin: "https://linkedin.com/in/troymichaud",
-                    cv: "path/to/tMichaud_CV.pdf"
+                    cv: "path/to/tMichaud_CV.pdf",
+                    about: "Troy Michaud specializes in strategic energy planning and operational optimization.",
+                    experience: [
+                        "Led successful negotiations for multimillion-dollar energy contracts.",
+                        "Directed teams in developing renewable energy projects.",
+                        "Provided expert testimony for regulatory proceedings."
+                    ],
+                    publications: [
+                        { title: "Energy Transition Strategies", link: "#" },
+                        { title: "Optimizing Renewable Operations", link: "#" }
+                    ]
                 },
                 "ChadWilcox": {
                     name: "Chad Wilcox",
@@ -77,7 +113,17 @@
                     phone: "1(207)400-1631",
                     vcard: "path/to/cWilcox.vcf",
                     linkedin: "https://linkedin.com/in/chadwilcox",
-                    cv: "path/to/cWilcox_CV.pdf"
+                    cv: "path/to/cWilcox_CV.pdf",
+                    about: "Chad Wilcox has over 20 years of experience in energy project management.",
+                    experience: [
+                        "Managed large-scale infrastructure projects.",
+                        "Provided consulting for energy efficiency programs.",
+                        "Authored key industry publications on grid modernization."
+                    ],
+                    publications: [
+                        { title: "Grid Modernization Trends", link: "#" },
+                        { title: "Infrastructure Development Challenges", link: "#" }
+                    ]
                 }
             };
 
@@ -90,13 +136,16 @@
                 document.getElementById('expert-name').textContent = expert.name;
                 document.getElementById('expert-position').textContent = expert.position;
                 document.getElementById('expert-photo').src = expert.photo;
-                document.getElementById('expert-email').innerHTML = `<strong>Email:</strong> <a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a>`;
-                document.getElementById('expert-phone').innerHTML = `<strong>Phone:</strong> <a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone}</a>`;
+                document.getElementById('expert-email').innerHTML = `<i class="fas fa-envelope"></i> <a href="mailto:${expert.email}" style="text-decoration: none; color: #0056b3;">${expert.email}</a>`;
+                document.getElementById('expert-phone').innerHTML = `<i class="fas fa-phone"></i> <a href="tel:${expert.phone}" style="text-decoration: none; color: #0056b3;">${expert.phone}</a>`;
                 document.getElementById('vcard-link').href = expert.vcard;
                 document.getElementById('linkedin-link').href = expert.linkedin;
                 document.getElementById('cv-link').href = expert.cv;
+                document.getElementById('expert-about').textContent = expert.about;
+                document.getElementById('expert-experience').innerHTML = expert.experience.map(item => `<li>${item}</li>`).join('');
+                document.getElementById('expert-publications').innerHTML = expert.publications.map(pub => `<li><a href="${pub.link}" style="color: #0056b3;">${pub.title}</a></li>`).join('');
             } else {
-                document.getElementById('expert-profile').innerHTML = `<p>Expert not found.</p>`;
+                document.querySelector('.container').innerHTML = `<p>Expert not found.</p>`;
             }
         });
     </script>
