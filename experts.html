@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${expert.photo}" alt="${expert.name}" class="expert-photo" style="margin-left: 10px;">
                     </div>
                     <div class="expert-contact" style="text-align: left; margin-top: 15px;">
-                        <p><strong>Email:</strong> <a href="mailto:${expert.email}">${expert.email}</a></p>
-                        <p><strong>Phone:</strong> <a href="tel:${expert.phone}">${expert.phone}</a></p>
+                        <p><a href="mailto:${expert.email}" style="text-decoration: none;">${expert.email}</a></p>
+                        <p><a href="tel:${expert.phone}" style="text-decoration: none;">${expert.phone}</a></p>
                     </div>
                     <div class="expert-links" style="text-align: left; margin-top: 10px;">
-                        <a href="${expert.vcard}" class="expert-link"><i class="fas fa-id-card"></i> VCard</a>
-                        <a href="${expert.linkedin}" target="_blank" class="expert-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="${expert.cv}" download class="expert-link"><i class="fas fa-file-download"></i> CV</a>
+                        <a href="${expert.vcard}" class="expert-link" style="text-decoration: none;"><i class="fas fa-id-card"></i> VCard</a>
+                        <a href="${expert.linkedin}" target="_blank" class="expert-link" style="text-decoration: none;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="${expert.cv}" download class="expert-link" style="text-decoration: none;"><i class="fas fa-file-download"></i> CV</a>
                     </div>
                 </div>
             </div>
@@ -100,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         .expert-tile img.expert-photo {
@@ -135,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(styles);
 });
-
 
 
 	</script>
