@@ -46,7 +46,7 @@ header .container {
 }
 
 .hamburger {
-    
+    display: none;
     cursor: pointer;
     font-size: 2rem;
 }
