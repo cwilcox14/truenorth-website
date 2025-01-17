@@ -49,6 +49,7 @@ header .container {
     display: none;
     cursor: pointer;
     font-size: 2rem;
+	z-index: 10
 }
 
 @media (max-width: 768px) {
