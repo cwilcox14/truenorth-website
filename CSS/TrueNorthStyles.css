@@ -198,8 +198,7 @@ h2 {
 .hero.who-we-are {
     background-color: #003366; /* Deep blue matching the site theme */
     color: white; /* Ensure text remains visible */
-    min-height: 20vh; /* Adjust height to maintain consistency */
-    padding: 60px 20px; /* Adjust padding for balanced spacing */
+   
 }
 
 @keyframes scrollBackground {
