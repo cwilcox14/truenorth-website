@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="../css/TrueNorthStyles.css">
 </head>
 <body>
+    <!-- Header Section -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-3" style="background-color: #0056b3;">
+        <div class="container">
+            <h1>Expert Profile</h1>
+        </div>
+    </section>
+
+    <!-- Expert Profile Section -->
     <div class="container py-5">
         <a href="../index.html" class="btn btn-secondary mb-4">Back to Experts</a>
         <div id="expert-profile" class="card">
@@ -31,48 +42,63 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 TrueNorth Energy Partners | <a href="../privacy.html">Privacy Policy</a></p>
+    </footer>
+
     <script>
-        // Simulate data passed from the main page
-        const experts = {
-            "TroyMichaud": {
-                name: "Troy Michaud",
-                position: "Partner",
-                photo: "../images/Experts/tMichaud.jpg",
-                email: "troy.michaud@truenorthenergypartners.com",
-                phone: "1(706)313-6289",
-                vcard: "path/to/tMichaud.vcf",
-                linkedin: "https://linkedin.com/in/troymichaud",
-                cv: "path/to/tMichaud_CV.pdf"
-            },
-            "ChadWilcox": {
-                name: "Chad Wilcox",
-                position: "Partner",
-                photo: "../images/Experts/cWilcox.jpg",
-                email: "chad.wilcox@truenorthenergypartners.com",
-                phone: "1(207)400-1631",
-                vcard: "path/to/cWilcox.vcf",
-                linkedin: "https://linkedin.com/in/chadwilcox",
-                cv: "path/to/cWilcox_CV.pdf"
+        // Load Header
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('../header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Simulate data passed from the main page
+            const experts = {
+                "TroyMichaud": {
+                    name: "Troy Michaud",
+                    position: "Partner",
+                    photo: "../images/Experts/tMichaud.jpg",
+                    email: "troy.michaud@truenorthenergypartners.com",
+                    phone: "1(706)313-6289",
+                    vcard: "path/to/tMichaud.vcf",
+                    linkedin: "https://linkedin.com/in/troymichaud",
+                    cv: "path/to/tMichaud_CV.pdf"
+                },
+                "ChadWilcox": {
+                    name: "Chad Wilcox",
+                    position: "Partner",
+                    photo: "../images/Experts/cWilcox.jpg",
+                    email: "chad.wilcox@truenorthenergypartners.com",
+                    phone: "1(207)400-1631",
+                    vcard: "path/to/cWilcox.vcf",
+                    linkedin: "https://linkedin.com/in/chadwilcox",
+                    cv: "path/to/cWilcox_CV.pdf"
+                }
+            };
+
+            // Extract the expert's identifier from the URL
+            const params = new URLSearchParams(window.location.search);
+            const expertId = params.get('expert');
+            const expert = experts[expertId];
+
+            if (expert) {
+                document.getElementById('expert-name').textContent = expert.name;
+                document.getElementById('expert-position').textContent = expert.position;
+                document.getElementById('expert-photo').src = expert.photo;
+                document.getElementById('expert-email').innerHTML = `<strong>Email:</strong> <a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a>`;
+                document.getElementById('expert-phone').innerHTML = `<strong>Phone:</strong> <a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone}</a>`;
+                document.getElementById('vcard-link').href = expert.vcard;
+                document.getElementById('linkedin-link').href = expert.linkedin;
+                document.getElementById('cv-link').href = expert.cv;
+            } else {
+                document.getElementById('expert-profile').innerHTML = `<p>Expert not found.</p>`;
             }
-        };
-
-        // Extract the expert's identifier from the URL
-        const params = new URLSearchParams(window.location.search);
-        const expertId = params.get('expert');
-        const expert = experts[expertId];
-
-        if (expert) {
-            document.getElementById('expert-name').textContent = expert.name;
-            document.getElementById('expert-position').textContent = expert.position;
-            document.getElementById('expert-photo').src = expert.photo;
-            document.getElementById('expert-email').innerHTML = `<strong>Email:</strong> <a href="mailto:${expert.email}" style="text-decoration: none; color: #666;">${expert.email}</a>`;
-            document.getElementById('expert-phone').innerHTML = `<strong>Phone:</strong> <a href="tel:${expert.phone}" style="text-decoration: none; color: #666;">${expert.phone}</a>`;
-            document.getElementById('vcard-link').href = expert.vcard;
-            document.getElementById('linkedin-link').href = expert.linkedin;
-            document.getElementById('cv-link').href = expert.cv;
-        } else {
-            document.getElementById('expert-profile').innerHTML = `<p>Expert not found.</p>`;
-        }
+        });
     </script>
 </body>
 </html>
