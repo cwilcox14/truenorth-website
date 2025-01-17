@@ -69,6 +69,24 @@ header .container {
 		height: 50px;
 		cursor: pointer;
 	}
+	
+	#dropdown-menu {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Allow positioning below the header */
+        top: 100%; /* Place at the bottom of the header */
+        left: 0; /* Align to the left */
+        width: 100%; /* Full width of the screen */
+        background: white; /* White background for the dropdown */
+        padding: 20px; /* Add padding inside the dropdown */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    #dropdown-menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+	
     .nav-links {
         display: none;
         flex-direction: column;
