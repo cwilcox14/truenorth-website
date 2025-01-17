@@ -12,11 +12,6 @@
 </head>
 <body>
     <div id="header"></div>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-    </script>
 
     <section class="hero text-white py-3" style="background-color: #003366;">
         <div class="container">
@@ -30,5 +25,8 @@
     <footer class="text-center py-3">
         <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
+
+ <script src="main.js" defer></script>	
+	
 </body>
 </html>
