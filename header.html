@@ -1,6 +1,7 @@
 <!-- header.html -->
 <header id="main-header" class="p-2">
-    <div class="container">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo -->
         <a href="/" class="d-flex align-items-center" style="text-decoration: none;">
             <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px; height: auto; margin-right: 10px;">
             <div>
@@ -10,12 +11,18 @@
                 <span style="color: #FF6600; font-size: 1rem;">Energy Partners</span>
             </div>
         </a>
+
+        <!-- Hamburger Menu -->
+        <div id="menu-toggle" class="hamburger">
+            <span class="menu-icon"></span>
+        </div>
+
         <!-- Navigation -->
-        <div id="dropdown-menu" class="nav-links">
+        <nav id="dropdown-menu" class="nav-links">
             <a href="practices.html">Practices</a>
             <a href="experts.html">Experts</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
-        </div>
+        </nav>
     </div>
 </header>
