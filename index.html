@@ -10,129 +10,107 @@
     <link rel="stylesheet" href="css/TrueNorthStyles.css">
 </head>
 <body>
-<div id="header"></div>
-<div>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="/images/Logo - CW try.jpg" alt="TrueNorth Logo" style="width: 80px;">
+            </a>
+            <!-- Hamburger Menu -->
+            <div id="menu-toggle" class="hamburger">
+                <span class="menu-icon"></span>
+            </div>
+            <!-- Navigation Links -->
+            <nav id="dropdown-menu" class="nav-links">
+                <a href="practices.html">Practices</a>
+                <a href="experts.html">Experts</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-<section class="hero hero-animated text-white py-5">
-    <div class="container d-flex flex-column align-items-start justify-content-start">
-        <h2 class="display-4">Empowering Energy Solutions for the Future</h2>
-        <p class="lead">At TrueNorth, we provide expert consulting services that drive growth and sustainability in the energy sector.</p>
-        <a href="contact.html" class="btn btn-primary">Connect with us</a>
-    </div>
-</section>
+    <section class="hero hero-animated text-white py-5">
+        <div class="container d-flex flex-column align-items-start justify-content-start">
+            <h2 class="display-4">Empowering Energy Solutions for the Future</h2>
+            <p class="lead">At TrueNorth, we provide expert consulting services that drive growth and sustainability in the energy sector.</p>
+            <a href="contact.html" class="btn btn-primary">Connect with us</a>
+        </div>
+    </section>
 
     <!-- Featured Services Section -->
-<section id="featured-practice" class="hero text-white py-5">
-    <div class="container d-flex lex-column align-items-start justify-content-start">
-        <div id="practice-content" class="text-start">
-            <!-- Static Small Text -->
-            <p class="featured-group-text">Featured Practice Group</p>
-            <!-- Dynamic Content (JavaScript will populate this area) -->
-			
+    <section id="featured-practice" class="hero text-white py-5">
+        <div class="container d-flex flex-column align-items-start justify-content-start">
+            <div id="practice-content" class="text-start">
+                <!-- Static Small Text -->
+                <p class="featured-group-text">Featured Practice Group</p>
+                <!-- Dynamic Content (JavaScript will populate this area) -->
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Who We Are Section -->
-<section class="hero who-we-are text-white py-5">
-    <div class="container d-flex flex-column align-items-start justify-content-start">
-        <h2 class="display-4">Who We Are</h2>
-        <p class="lead">TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
-        <a href="experts.html" class="btn btn-primary">Our Team</a>
-    </div>
-</section>
-</div>
+    <section class="hero who-we-are text-white py-5">
+        <div class="container d-flex flex-column align-items-start justify-content-start">
+            <h2 class="display-4">Who We Are</h2>
+            <p class="lead">TrueNorth Energy Partners is a trusted leader in energy consulting, offering cutting-edge solutions for clients across the energy industry. Our team combines years of expertise with innovative strategies to help your business succeed.</p>
+            <a href="experts.html" class="btn btn-primary">Our Team</a>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer class="text-center py-3">
-    <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
-</footer>
-	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 TrueNorth Energy Partners | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Fetch and insert the header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-
-            // Debug: Confirm the header was injected
-            const header = document.getElementById('main-header');
-            console.log('Header element:', header);
-
-            if (header) {
-                // Add scroll functionality to hide/reveal header
-                let lastScrollY = window.scrollY;
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > lastScrollY) {
-                        header.style.transform = 'translateY(-100%)'; // Hide header
-                    } else {
-                        header.style.transform = 'translateY(0)'; // Show header
-                    }
-                    lastScrollY = window.scrollY;
-                });
-            } else {
-                console.error('Main header not found after injection.');
-            }
-
-            // Initialize menu toggle functionality
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger Menu Toggle
             const menuToggle = document.getElementById('menu-toggle');
             const dropdownMenu = document.getElementById('dropdown-menu');
+            const menuIcon = menuToggle.querySelector('.menu-icon');
+
             if (menuToggle && dropdownMenu) {
-                const menuIcon = menuToggle.querySelector(".menu-icon");
-                menuToggle.addEventListener("click", () => {
-                    dropdownMenu.classList.toggle("show");
-                    if (menuIcon) {
-                        menuIcon.classList.toggle("open");
-                    }
+                menuToggle.addEventListener('click', () => {
+                    dropdownMenu.classList.toggle('show'); // Toggle menu visibility
+                    menuIcon.classList.toggle('open'); // Animate hamburger icon
                 });
             }
-        })
-        .catch(error => console.error('Error loading header:', error));
-});
 
-</script>
-	
-<script>
-   document.addEventListener('DOMContentLoaded', () => {
-    const practices = [
-        {
-            title: "LTSA Negotiation",
-            description: "TrueNorth specializes in assisting clients in the power industry with negotiating Long-Term Service Agreements (LTSA) to optimize operational performance and cost efficiency. Leveraging deep industry expertise, TrueNorth provides guidance on contract terms, pricing structures, and performance guarantees, ensuring alignment with client objectives. By analyzing market benchmarks and identifying potential risks, TrueNorth helps clients secure agreements that balance technical and financial requirements, fostering long-term value and reliability.",
-            image: "images/LTSA.webp", // Confirm this path works
-            link: "ltsa.html"
-        },
-        {
-            title: "Rates and Regulatory",
-            description: "TrueNorth Energy Partners provides comprehensive support for utility rate cases, offering expert analysis and strategic guidance to navigate complex regulatory environments. Our services include data validation, cost-of-service studies, revenue requirement assessments, and expert witness testimony to ensure compliance with industry standards. By leveraging deep expertise and industry benchmarks, TrueNorth helps utilities optimize rate structures, balance stakeholder interests, and achieve favorable regulatory outcomes.",
-            image: "images/ScetionIIpc2.webp", // Updated image name
-            link: "rates.html"
-        }
-    ];
+            // Featured Practice Dynamic Content
+            const practices = [
+                {
+                    title: "LTSA Negotiation",
+                    description: "TrueNorth specializes in assisting clients in the power industry with negotiating Long-Term Service Agreements (LTSA) to optimize operational performance and cost efficiency. Leveraging deep industry expertise, TrueNorth provides guidance on contract terms, pricing structures, and performance guarantees, ensuring alignment with client objectives.",
+                    image: "images/LTSA.webp",
+                    link: "ltsa.html"
+                },
+                {
+                    title: "Rates and Regulatory",
+                    description: "TrueNorth Energy Partners provides comprehensive support for utility rate cases, offering expert analysis and strategic guidance to navigate complex regulatory environments.",
+                    image: "images/ScetionIIpc2.webp",
+                    link: "rates.html"
+                }
+            ];
 
-    // Select a random practice
-    const randomPractice = practices[Math.floor(Math.random() * practices.length)];
+            const randomPractice = practices[Math.floor(Math.random() * practices.length)];
+            const featuredPracticeSection = document.getElementById('featured-practice');
+            const practiceContent = document.getElementById('practice-content');
 
-    // Populate the section and content
-    const featuredPracticeSection = document.getElementById('featured-practice');
-    const practiceContent = document.getElementById('practice-content');
+            // Set background image for the section
+            featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
 
-    // Set the full background image
-    featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
-
-    // Populate practice details (title, description, and button)
-    practiceContent.innerHTML += `
-        <h3>${randomPractice.title}</h3>
-        <p>${randomPractice.description}</p>
-        <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
-    `;
-});
-
-</script>
-	
-
-
+            // Populate dynamic content
+            practiceContent.innerHTML += `
+                <h3>${randomPractice.title}</h3>
+                <p>${randomPractice.description}</p>
+                <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
+            `;
+        });
+    </script>
 </body>
 </html>
