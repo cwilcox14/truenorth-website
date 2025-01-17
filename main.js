@@ -63,12 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const practiceContent = document.getElementById('practice-content');
 
     // Set background image for the section
+   if (featuredPracticeSection && practiceContent) {
     featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
 
-    // Populate dynamic content
     practiceContent.innerHTML += `
         <h3>${randomPractice.title}</h3>
         <p>${randomPractice.description}</p>
         <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
     `;
+} else {
+    console.error('Featured practice section or content container not found.');
+}
 });
