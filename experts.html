@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="d-flex align-items-center">
                         <div style="text-align: left; flex-grow: 1;">
                             <h3 style="color: #0056b3; font-weight: bold;">${expert.name}</h3>
-                            <p class="position" style="color: #555; font-style: italic;">${expert.position}</p>
+                            <p class="position" style="color: #89CFF0; font-weight: bold;">${expert.position}</p>
                         </div>
                         <img src="${expert.photo}" alt="${expert.name}" class="expert-photo" style="margin-left: 10px;">
                     </div>
@@ -107,6 +107,30 @@ document.addEventListener('DOMContentLoaded', () => {
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
+        }
+
+        .experts-grid .col-lg-4 {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        .experts-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .experts-grid .col-md-6 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .experts-grid .col-sm-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
     `;
     document.head.appendChild(styles);
