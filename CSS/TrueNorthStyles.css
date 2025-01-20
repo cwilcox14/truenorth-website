@@ -49,8 +49,8 @@ header .container {
 
 
 .hamburger {
-	width: 10px;  /* Adjust width to make it smaller */
-    height: 10px; /* Adjust height to make it smaller */
+	width: 2px;  /* Adjust width to make it smaller */
+    height: 2px; /* Adjust height to make it smaller */
     display: none;
     cursor: pointer;
     font-size: 1rem;
