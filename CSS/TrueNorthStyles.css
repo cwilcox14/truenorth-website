@@ -49,8 +49,8 @@ header .container {
 
 
 .hamburger {
-	width: 30px;  /* Adjust width to make it smaller */
-    height: 30px; /* Adjust height to make it smaller */
+	width: 10px;  /* Adjust width to make it smaller */
+    height: 10px; /* Adjust height to make it smaller */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
