@@ -57,8 +57,8 @@
 	<script src="js/menu-toggle.js"></script>
 <script>
 	
-	// Dynamic Featured Practice Section
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("load", function() {
+    // Dynamic Featured Practice Section - Ensure Image is Preloaded Before Showing Page
     const practices = [
         {
             title: "LTSA Negotiation",
@@ -75,22 +75,39 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const randomPractice = practices[Math.floor(Math.random() * practices.length)];
-    const featuredPracticeSection = document.getElementById('featured-practice');
-    const practiceContent = document.getElementById('practice-content');
+    const featuredPracticeSection = document.getElementById("featured-practice");
+    const practiceContent = document.getElementById("practice-content");
 
-    // Set background image for the section
-   if (featuredPracticeSection && practiceContent) {
-    featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
+    if (featuredPracticeSection && practiceContent) {
+        // Preload Image
+        const img = new Image();
+        img.src = randomPractice.image;
+        
+        img.onload = function () {
+            // Image is fully loaded, now apply background
+            featuredPracticeSection.style.backgroundImage = `url(${randomPractice.image})`;
 
-    practiceContent.innerHTML += `
-        <h3>${randomPractice.title}</h3>
-        <p>${randomPractice.description}</p>
-        <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
-    `;
-} else {
-    console.error('Featured practice section or content container not found.');
-}
+            // Populate content
+            practiceContent.innerHTML = `
+                <h3>${randomPractice.title}</h3>
+                <p>${randomPractice.description}</p>
+                <a href="${randomPractice.link}" class="btn btn-primary">Learn More</a>
+            `;
+
+            // Now remove preloader and show main content
+            document.getElementById("preloader").style.display = "none";
+            document.querySelector("main").style.display = "block";
+            document.querySelector("footer").style.display = "block";
+        };
+    } else {
+        console.error("Featured practice section or content container not found.");
+        // Ensure we still hide preloader even if the section is missing
+        document.getElementById("preloader").style.display = "none";
+        document.querySelector("main").style.display = "block";
+        document.querySelector("footer").style.display = "block";
+    }
 });
+
 
 	</script>
     <script src="main.js" defer></script>
