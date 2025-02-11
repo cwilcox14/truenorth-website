@@ -40,4 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error loading header:', error));
 });
+window.addEventListener("load", function() {
+    // Hide preloader and show the main content
+    document.getElementById("preloader").style.display = "none";
+    document.querySelector("main").style.display = "block";
+    document.querySelector("footer").style.display = "block";
+});
 
